@@ -6,19 +6,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
-    <Button
-            android:text="@string/llamada_api"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/buttonAPI"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
-            android:text="@string/textview"
+            android:text="@string/txtLogin"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/texto"
+            android:layout_height="wrap_content" android:id="@+id/txtLogin"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="32dp"
+            app:layout_constraintHorizontal_bias="0.498"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/enterEmail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtLogin" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.134" android:minHeight="48dp" android:importantForAutofill="no"
+            android:hint="@string/hintEmail"
+            android:inputType="textEmailAddress"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/enterPassword" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/buttonAPI" app:layout_constraintTop_toTopOf="parent"/>
-
-
+            app:layout_constraintTop_toBottomOf="@+id/enterEmail" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.126" android:minHeight="48dp" android:autofillHints=""
+            android:hint="@string/hintPassword"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

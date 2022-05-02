@@ -17,12 +17,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button boton = findViewById(R.id.buttonAPI);
-        boton.setOnClickListener(view -> get());
+        //Button boton = findViewById(R.id.buttonAPI);
+        //boton.setOnClickListener(view -> get());
     }
 
-    private void get() {
-        TextView texto = findViewById(R.id.texto);
+    private void get(TextView texto) {
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         String url = "http://192.168.7.253/api/apitest";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, response -> texto.setText(response), error -> {
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
-    private void post() {
-        TextView texto = findViewById(R.id.texto);
+    private void post(TextView texto) {
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
         String url = "https://cat-fact.herokuapp.com/facts/random";
 
