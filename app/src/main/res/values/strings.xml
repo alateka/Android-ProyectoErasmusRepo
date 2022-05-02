@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TFG</string>
+    <string name="llamada_api">Llamada API</string>
+    <string name="textview">TextView</string>
 </resources>
