@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">TFG</string>
-    <string name="llamada_api">Llamada API</string>
-    <string name="textview">TextView</string>
-    <string name="txtLogin">Iniciar Sesión</string>
+    <string name="txtLogin">Iniciar Sesión para entrar</string>
     <string name="hintPassword">Contraseña</string>
-    <string name="hintEmail">Email</string>
+    <string name="hintEmail">Correo Electrónico</string>
+    <string name="btnLogin">Iniciar Sesión</string>
 </resources>

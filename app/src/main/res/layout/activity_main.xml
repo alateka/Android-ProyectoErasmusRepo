@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintVertical_bias="0.134" android:minHeight="48dp" android:importantForAutofill="no"
             android:hint="@string/hintEmail"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress" android:text="pepe@mail.es"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,6 +32,19 @@
             android:id="@+id/enterPassword" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enterEmail" app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintVertical_bias="0.126" android:minHeight="48dp" android:autofillHints=""
-            android:hint="@string/hintPassword"/>
+            app:layout_constraintVertical_bias="0.058" android:minHeight="48dp"
+            android:hint="@string/hintPassword" android:text="12345678"/>
+    <Button
+            android:text="@string/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnLogin"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/enterPassword"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.118"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/txtMessage"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

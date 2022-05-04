@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TFG</string>
+    <string name="txtLogin">Sign In to enter</string>
+    <string name="hintPassword">Password</string>
+    <string name="hintEmail">eMail</string>
+    <string name="btnLogin">Sign In</string>
+</resources>
