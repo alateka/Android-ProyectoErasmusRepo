@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TFG</string>
-    <string name="txtLogin">Iniciar Sesión para entrar</string>
     <string name="hintPassword">Contraseña</string>
     <string name="hintEmail">Correo Electrónico</string>
     <string name="btnLogin">Iniciar Sesión</string>
+    <string name="errorLogin">ERROR : El usuario o la contraseña no son correctos</string>
 </resources>

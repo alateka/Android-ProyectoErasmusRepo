@@ -5,46 +5,56 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
-    <TextView
-            android:text="@string/txtLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/txtLogin"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="32dp"
-            app:layout_constraintHorizontal_bias="0.498"/>
+        tools:context=".view.LoginActivity">
+    <ImageView
+            android:src="@drawable/erasmuslogo"
+            android:layout_width="333dp"
+            android:layout_height="82dp" android:id="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="TODO"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.118"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
             android:id="@+id/enterEmail"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtLogin" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintVertical_bias="0.134" android:minHeight="48dp" android:importantForAutofill="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:minHeight="48dp" android:importantForAutofill="no"
             android:hint="@string/hintEmail"
-            android:inputType="textEmailAddress" android:text="pepe@mail.es"/>
+            android:inputType="textEmailAddress" android:textSize="23sp"
+            android:fontFamily="@font/ubuntu"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.352"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/enterPassword" app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/enterPassword"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enterEmail" app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintVertical_bias="0.058" android:minHeight="48dp"
-            android:hint="@string/hintPassword" android:text="12345678"/>
+            android:minHeight="48dp"
+            android:hint="@string/hintPassword" android:textSize="23sp"
+            android:fontFamily="@font/ubuntu" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.477"/>
     <Button
             android:text="@string/btnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/btnLogin"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/enterPassword"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.118"/>
+            app:layout_constraintHorizontal_bias="0.495"
+            android:textSize="31sp"
+            android:fontFamily="@font/ubuntu"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.675"/>
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/txtMessage"
+            android:layout_width="383dp"
+            android:layout_height="43dp" android:id="@+id/txtMessage"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin" app:layout_constraintBottom_toBottomOf="parent"/>
+            android:fontFamily="@font/ubuntu" android:textSize="15sp" android:textColor="#AC0000"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.905" app:layout_constraintHorizontal_bias="0.589"
+            android:textAlignment="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

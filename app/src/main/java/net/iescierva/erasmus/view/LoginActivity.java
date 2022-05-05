@@ -1,7 +1,9 @@
-package net.iescierva.erasmus;
+package net.iescierva.erasmus.view;
 
-import android.content.Context;
 import android.content.Intent;
+import net.iescierva.erasmus.Data.User;
+
+// SDK Android
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,13 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import net.iescierva.erasmus.view.MainMenuActivity;
+import net.iescierva.erasmus.R;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.*;
+// JAVA API
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
+
+    public static User user;
     TextView txtMessage;
     EditText enterEmail;
     EditText enterPassword;
@@ -28,19 +34,19 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(view -> check());
-
-    }
-
-    private void check()
-    {
         enterEmail = findViewById(R.id.enterEmail);
         enterPassword = findViewById(R.id.enterPassword);
         txtMessage = findViewById(R.id.txtMessage);
 
+        btnLogin = findViewById(R.id.btnLogin);
+        btnLogin.setOnClickListener(view -> login(enterEmail, enterPassword, txtMessage));
+
+    }
+
+    /*private void check()
+    {
         try {
-            String content = readApiFile();
+            String content = readApiFile(openFileInput("apiToken.dat"));
             System.out.println("Logueado");
             Intent i = new Intent(LoginActivity.this, MainMenuActivity.class);
             startActivity(i);
@@ -48,18 +54,19 @@ public class LoginActivity extends AppCompatActivity {
             login(enterEmail, enterPassword, txtMessage);
             System.out.println("Fichero creado");
         }
-    }
+    }*/
     private void login(EditText enterEmail, EditText enterPassword, TextView txtMessage) {
+
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
-        String url = "http://192.168.7.111/api/getoken";
+        String url = "http://192.168.7.111/api/loginonandroidapp";
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
-                response -> apiTokenToFile(response),
+                response -> createSession(response),
                 error -> {
-                    System.out.println(error.getMessage());
-                    txtMessage.setText(error.getMessage());
-        }){
+                    System.out.println("ERROR ==> "+error.getMessage());
+                    txtMessage.setText(R.string.errorLogin);
+                }){
             @Override
             protected Map<String,String> getParams() {
                 Map<String,String> params = new HashMap<>();
@@ -71,25 +78,36 @@ public class LoginActivity extends AppCompatActivity {
         };
         queue.add(stringRequest);
     }
-    private void apiTokenToFile(String response)
+
+    private void createSession(String response)
     {
         try {
-            OutputStreamWriter apiFile = new OutputStreamWriter(
-                    openFileOutput("apiToken.dat", Context.MODE_PRIVATE)
-            );
+            JSONObject jsonData = new JSONObject(response);
+            user = new User(jsonData.getString("AccessToken"), jsonData.getString("Name"), jsonData.getString("Email"));
+
+            System.out.println("Logueado");
+            Intent i = new Intent(this, MainMenuActivity.class);
+            startActivity(i);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /*public static void apiTokenToFile(String response, OutputStreamWriter apiFile)
+    {
+        try {
             apiFile.write(response);
             apiFile.close();
         } catch(IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    private String readApiFile() throws IOException {
-        InputStream inputStream = openFileInput("apiToken.dat");
+    /*public static String readApiFile(InputStream in) throws IOException {
         String result = "";
-        if(inputStream != null)
+        if(in != null)
         {
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            InputStreamReader inputStreamReader = new InputStreamReader(in);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             String temp = "";
             StringBuilder stringBuilder = new StringBuilder();
@@ -100,9 +118,9 @@ public class LoginActivity extends AppCompatActivity {
                 stringBuilder.append("\n");
             }
 
-            inputStream.close();
+            in.close();
             result = stringBuilder.toString();
         }
         return result;
-    }
+    }*/
 }
