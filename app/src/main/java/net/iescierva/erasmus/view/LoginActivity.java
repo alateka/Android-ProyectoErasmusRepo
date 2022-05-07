@@ -1,6 +1,8 @@
 package net.iescierva.erasmus.view;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.widget.ProgressBar;
 import net.iescierva.erasmus.Data.User;
 
 // SDK Android
@@ -40,21 +42,8 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(view -> login(enterEmail, enterPassword, txtMessage));
-
     }
 
-    /*private void check()
-    {
-        try {
-            String content = readApiFile(openFileInput("apiToken.dat"));
-            System.out.println("Logueado");
-            Intent i = new Intent(LoginActivity.this, MainMenuActivity.class);
-            startActivity(i);
-        } catch (IOException e) {
-            login(enterEmail, enterPassword, txtMessage);
-            System.out.println("Fichero creado");
-        }
-    }*/
     private void login(EditText enterEmail, EditText enterPassword, TextView txtMessage) {
 
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
@@ -92,35 +81,4 @@ public class LoginActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
-
-    /*public static void apiTokenToFile(String response, OutputStreamWriter apiFile)
-    {
-        try {
-            apiFile.write(response);
-            apiFile.close();
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-    }*/
-
-    /*public static String readApiFile(InputStream in) throws IOException {
-        String result = "";
-        if(in != null)
-        {
-            InputStreamReader inputStreamReader = new InputStreamReader(in);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            String temp = "";
-            StringBuilder stringBuilder = new StringBuilder();
-
-            while((temp = bufferedReader.readLine()) != null)
-            {
-                stringBuilder.append(temp);
-                stringBuilder.append("\n");
-            }
-
-            in.close();
-            result = stringBuilder.toString();
-        }
-        return result;
-    }*/
 }

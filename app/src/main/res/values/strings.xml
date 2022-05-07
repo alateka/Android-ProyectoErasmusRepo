@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">TFG</string>
-    <string name="hintPassword">Contraseña</string>
-    <string name="hintEmail">Correo Electrónico</string>
-    <string name="btnLogin">Iniciar Sesión</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_email">Correo Electrónico</string>
+    <string name="btn_login">Iniciar Sesión</string>
     <string name="errorLogin">ERROR : El usuario o la contraseña no son correctos</string>
+    <string name="error_without_file_manager">Por favor instale un gestor de archivos</string>
 </resources>

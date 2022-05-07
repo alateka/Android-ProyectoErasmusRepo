@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TFG</string>
-    <string name="hintPassword">Password</string>
-    <string name="hintEmail">eMail</string>
-    <string name="btnLogin">Sign In</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">eMail</string>
+    <string name="btn_login">Sign In</string>
     <string name="errorLogin">ERROR: Either eMail or password are invalid</string>
+    <string name="error_without_file_manager">Please install a file manager.</string>
 </resources>
