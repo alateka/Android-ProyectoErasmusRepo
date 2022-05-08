@@ -3,6 +3,12 @@
     <string name="hint_password">Contraseña</string>
     <string name="hint_email">Correo Electrónico</string>
     <string name="btn_login">Iniciar Sesión</string>
-    <string name="errorLogin">ERROR : El usuario o la contraseña no son correctos</string>
+    <string name="error_login">ERROR : El usuario o la contraseña no son correctos</string>
     <string name="error_without_file_manager">Por favor instale un gestor de archivos</string>
+    <string name="txt_user_data">Su información</string>
+    <string name="btn_upload_file">Subir Documento</string>
+    <string name="txt_documents_list">Sus documentos</string>
+    <string name="user_name">Nombre</string>
+    <string name="txt_user_dni">Identificación (DNI/NIF)</string>
+    <string name="user_last_name">Apellidos</string>
 </resources>

@@ -4,6 +4,12 @@
     <string name="hint_password">Password</string>
     <string name="hint_email">eMail</string>
     <string name="btn_login">Sign In</string>
-    <string name="errorLogin">ERROR: Either eMail or password are invalid</string>
+    <string name="error_login">ERROR: Either eMail or password are invalid</string>
     <string name="error_without_file_manager">Please install a file manager.</string>
+    <string name="txt_user_data">Your information</string>
+    <string name="btn_upload_file">Upload Document</string>
+    <string name="txt_documents_list">Your documents</string>
+    <string name="user_name">Name</string>
+    <string name="txt_user_dni">Identification (DNI/NIF)</string>
+    <string name="user_last_name">Last Name</string>
 </resources>

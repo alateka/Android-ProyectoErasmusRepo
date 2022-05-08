@@ -1,9 +1,7 @@
-package net.iescierva.erasmus.view;
+package net.iescierva.erasmus.View;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.widget.ProgressBar;
-import net.iescierva.erasmus.Data.User;
+import net.iescierva.erasmus.Model.User;
 
 // SDK Android
 import android.os.Bundle;
@@ -34,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         enterEmail = findViewById(R.id.enterEmail);
         enterPassword = findViewById(R.id.enterPassword);
@@ -54,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                 response -> createSession(response),
                 error -> {
                     System.out.println("ERROR ==> "+error.getMessage());
-                    txtMessage.setText(R.string.errorLogin);
+                    txtMessage.setText(R.string.error_login);
                 }){
             @Override
             protected Map<String,String> getParams() {
@@ -72,10 +70,14 @@ public class LoginActivity extends AppCompatActivity {
     {
         try {
             JSONObject jsonData = new JSONObject(response);
-            user = new User(jsonData.getString("AccessToken"), jsonData.getString("Name"), jsonData.getString("Email"));
+            user = new User(jsonData.getString("AccessToken"),
+                    jsonData.getString("Name"),
+                    jsonData.getString("LastName"),
+                    jsonData.getString("Email"),
+                    jsonData.getString("DNI"));
 
-            System.out.println("Logueado");
-            Intent i = new Intent(this, MainMenuActivity.class);
+            System.out.println("==> OK :: Started User Session");
+            Intent i = new Intent(this, UserDataActivity.class);
             startActivity(i);
         } catch (JSONException e) {
             throw new RuntimeException(e);

@@ -3,9 +3,9 @@
           package="net.iescierva.erasmus">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission." />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission."/>
 
     <application
             android:allowBackup="true"
@@ -16,10 +16,13 @@
             android:theme="@style/Theme.TFG"
             android:usesCleartextTraffic="true">
         <activity
-                android:name=".view.MainMenuActivity"
+                android:name=".View.UserDataActivity"
                 android:exported="true"/>
         <activity
-                android:name=".view.LoginActivity"
+                android:name=".View.UserDocumentsActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".View.LoginActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
