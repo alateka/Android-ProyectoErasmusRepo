@@ -17,9 +17,11 @@
             android:usesCleartextTraffic="true">
         <activity
                 android:name=".View.UserDataActivity"
+                android:label="@string/txt_user_data"
                 android:exported="true"/>
         <activity
                 android:name=".View.UserDocumentsActivity"
+                android:label="@string/txt_documents_list"
                 android:exported="true"/>
         <activity
                 android:name=".View.LoginActivity"

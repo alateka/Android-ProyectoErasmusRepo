@@ -3,16 +3,28 @@ package net.iescierva.erasmus.UseCase;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
+import net.iescierva.erasmus.R;
+import net.iescierva.erasmus.View.LoginActivity;
+import net.iescierva.erasmus.View.UserDocumentsActivity;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class OnMainMenuActivity {
@@ -46,7 +58,7 @@ public class OnMainMenuActivity {
 
             new MultipartUploadRequest(contextMainMenuActivity, uploadId, "http://192.168.7.111/api/uploadfile")
                     .addFileToUpload(path, "file") //Adding file
-                    .addHeader("Authorization", "Bearer 25|GV8xEZKsXKQ95SDIzePjfiuG8m6hXx4gAOY1Nwc9")
+                    .addHeader("Authorization", "Bearer "+ LoginActivity.user.getApiToken())
                     .setNotificationConfig(new UploadNotificationConfig())
                     .setMaxRetries(2)
                     .startUpload();

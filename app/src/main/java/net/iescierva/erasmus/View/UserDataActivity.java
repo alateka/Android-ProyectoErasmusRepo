@@ -1,5 +1,8 @@
 package net.iescierva.erasmus.View;
 
+import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,5 +29,20 @@ public class UserDataActivity extends AppCompatActivity {
         userLastName.setText(LoginActivity.user.getLastName());
         userEmail.setText(LoginActivity.user.getEmail());
         userDNI.setText(LoginActivity.user.getDNI());
+    }
+
+    @Override public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.switch_document_action) {
+            Intent i = new Intent(this, UserDocumentsActivity.class);
+            startActivity(i);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.user_menu, menu);
+        return true;
     }
 }

@@ -38,11 +38,17 @@
                 android:layout_height="wrap_content" android:id="@+id/btnLogin"
                 android:textSize="31sp"
                 android:fontFamily="@font/ubuntu"
-                android:gravity="center" android:layout_gravity="center" android:layout_marginTop="55dp"
-                android:layout_marginBottom="33dp"/>
+                android:gravity="center" android:layout_gravity="center" android:layout_marginTop="55dp"/>
+        <ProgressBar
+                android:id="@+id/indeterminateBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
         <TextView
                 android:layout_width="383dp"
                 android:layout_height="43dp" android:id="@+id/txtMessage"
-                android:fontFamily="@font/ubuntu" android:textSize="15sp" android:textColor="#AC0000"
-                android:textAlignment="center" android:gravity="center" android:layout_gravity="center"/>
+                android:fontFamily="@font/ubuntu" android:textSize="15sp"
+                android:textAlignment="center" android:gravity="center" android:layout_gravity="center"
+                android:text="@string/loading_session"/>
 </LinearLayout>

@@ -1,5 +1,8 @@
 package net.iescierva.erasmus.Model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class User {
 
     private String apiToken;
@@ -7,13 +10,15 @@ public class User {
     private String lastName;
     private String email;
     private String DNI;
+    private JSONArray documentList;
 
-    public User(String apiToken, String name, String lastName, String email, String dni) {
+    public User(String apiToken, String name, String lastName, String email, String dni, JSONArray documentList) {
         this.apiToken = apiToken;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
-        DNI = dni;
+        this.DNI = dni;
+        this.documentList = documentList;
     }
 
     public String getApiToken() {
@@ -54,5 +59,13 @@ public class User {
 
     public void setDNI(String DNI) {
         this.DNI = DNI;
+    }
+
+    public JSONArray getDocumentList() {
+        return documentList;
+    }
+
+    public void setDocumentList(JSONArray documentList) {
+        this.documentList = documentList;
     }
 }

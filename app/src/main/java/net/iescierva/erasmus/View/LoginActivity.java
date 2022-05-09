@@ -1,6 +1,9 @@
 package net.iescierva.erasmus.View;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.view.View;
+import android.widget.ProgressBar;
 import net.iescierva.erasmus.Model.User;
 
 // SDK Android
@@ -23,10 +26,11 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     public static User user;
-    TextView txtMessage;
-    EditText enterEmail;
-    EditText enterPassword;
-    Button btnLogin;
+    private TextView txtMessage;
+    private EditText enterEmail;
+    private EditText enterPassword;
+    private Button btnLogin;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -37,12 +41,20 @@ public class LoginActivity extends AppCompatActivity {
         enterEmail = findViewById(R.id.enterEmail);
         enterPassword = findViewById(R.id.enterPassword);
         txtMessage = findViewById(R.id.txtMessage);
+        progressBar = findViewById(R.id.indeterminateBar);
 
         btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(view -> login(enterEmail, enterPassword, txtMessage));
+        txtMessage.setVisibility(View.INVISIBLE);
+
+        btnLogin.setOnClickListener(view -> login());
     }
 
-    private void login(EditText enterEmail, EditText enterPassword, TextView txtMessage) {
+    private void login() {
+        progressBar.setVisibility(View.VISIBLE);
+
+        txtMessage.setVisibility(View.VISIBLE);
+        txtMessage.setTextColor(Color.BLACK);
+        txtMessage.setText(R.string.loading_session);
 
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
         String url = "http://192.168.7.111/api/loginonandroidapp";
@@ -52,6 +64,8 @@ public class LoginActivity extends AppCompatActivity {
                 response -> createSession(response),
                 error -> {
                     System.out.println("ERROR ==> "+error.getMessage());
+                    progressBar.setVisibility(View.INVISIBLE);
+                    txtMessage.setTextColor(Color.RED);
                     txtMessage.setText(R.string.error_login);
                 }){
             @Override
@@ -68,13 +82,18 @@ public class LoginActivity extends AppCompatActivity {
 
     private void createSession(String response)
     {
+        progressBar.setVisibility(View.INVISIBLE);
+        txtMessage.setVisibility(View.INVISIBLE);
         try {
             JSONObject jsonData = new JSONObject(response);
-            user = new User(jsonData.getString("AccessToken"),
+            user = new User(
+                    jsonData.getString("AccessToken"),
                     jsonData.getString("Name"),
                     jsonData.getString("LastName"),
                     jsonData.getString("Email"),
-                    jsonData.getString("DNI"));
+                    jsonData.getString("DNI"),
+                    jsonData.getJSONArray("Documents")
+            );
 
             System.out.println("==> OK :: Started User Session");
             Intent i = new Intent(this, UserDataActivity.class);
@@ -83,4 +102,5 @@ public class LoginActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
+
 }
