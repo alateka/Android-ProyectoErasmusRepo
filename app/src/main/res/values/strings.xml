@@ -14,4 +14,6 @@
     <string name="loading_session">Obteniendo información...</string>
     <string name="txt_switch_document">Ir a Documentos</string>
     <string name="txt_switch_account">Perfil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

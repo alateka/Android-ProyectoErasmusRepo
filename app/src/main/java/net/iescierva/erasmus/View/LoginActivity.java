@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
             );
 
             System.out.println("==> OK :: Started User Session");
-            Intent i = new Intent(this, UserDataActivity.class);
+            Intent i = new Intent(this, Home.class);
             startActivity(i);
         } catch (JSONException e) {
             throw new RuntimeException(e);

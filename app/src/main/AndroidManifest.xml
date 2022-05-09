@@ -16,12 +16,8 @@
             android:theme="@style/Theme.TFG"
             android:usesCleartextTraffic="true">
         <activity
-                android:name=".View.UserDataActivity"
-                android:label="@string/txt_user_data"
-                android:exported="true"/>
-        <activity
-                android:name=".View.UserDocumentsActivity"
-                android:label="@string/txt_documents_list"
+                android:name=".View.Home"
+                android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
                 android:exported="true"/>
         <activity
                 android:name=".View.LoginActivity"
