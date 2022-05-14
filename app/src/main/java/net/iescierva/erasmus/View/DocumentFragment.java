@@ -19,51 +19,18 @@ import static android.app.Activity.RESULT_OK;
 
 public class DocumentFragment extends Fragment {
 
-    private final int CHOOSE_FILE = 1;
-
-    private OnMainMenuActivity onMainMenu;
 
     private RecyclerView recyclerView;
 
     private View homeView;
 
     public DocumentFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        onMainMenu = new OnMainMenuActivity(this.getContext());
-        onMainMenu.requestStoragePermission();
-    }
-
-    private void showFileChooser() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-
-        try {
-            startActivityForResult(
-                    Intent.createChooser(intent, ""), CHOOSE_FILE);
-
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(this.getContext(), R.string.error_without_file_manager,
-                    Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case 1:
-                if (resultCode == RESULT_OK) {
-                    Uri uri = data.getData();
-                    onMainMenu.uploadMultipart(onMainMenu.getFilePath(uri));
-                }
-                break;
-        }
-        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

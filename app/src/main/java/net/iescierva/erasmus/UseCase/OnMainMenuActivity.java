@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import net.gotev.uploadservice.MultipartUploadRequest;
-import net.gotev.uploadservice.UploadNotificationConfig;
 import net.iescierva.erasmus.View.LoginActivity;
 
 import java.util.UUID;
@@ -45,10 +44,9 @@ public class OnMainMenuActivity {
         try {
             String uploadId = UUID.randomUUID().toString();
 
-            new MultipartUploadRequest(contextMainMenuActivity, uploadId, "http://192.168.7.111/api/uploadfile")
-                    .addFileToUpload(path, "file") //Adding file
+            new MultipartUploadRequest(contextMainMenuActivity, uploadId, "http://192.168.7.221/api/uploadfile")
+                    .addFileToUpload(path, "file")
                     .addHeader("Authorization", "Bearer "+ LoginActivity.user.getApiToken())
-                    .setNotificationConfig(new UploadNotificationConfig())
                     .setMaxRetries(2)
                     .startUpload();
 

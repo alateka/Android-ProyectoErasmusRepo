@@ -15,7 +15,7 @@ public class UserFragment extends Fragment {
     private TextView userDNI;
     private View homeView;
     public UserFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -27,7 +27,9 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        /*userName = homeView.findViewById(R.id.user_name);
+        homeView = inflater.inflate(R.layout.fragment_user, container, false);
+
+        userName = homeView.findViewById(R.id.user_name);
         userLastName = homeView.findViewById(R.id.user_last_name);
         userEmail = homeView.findViewById(R.id.user_email);
         userDNI = homeView.findViewById(R.id.user_dni);
@@ -35,9 +37,8 @@ public class UserFragment extends Fragment {
         userName.setText(LoginActivity.user.getName());
         userLastName.setText(LoginActivity.user.getLastName());
         userEmail.setText(LoginActivity.user.getEmail());
-        userDNI.setText(LoginActivity.user.getDNI());*/
+        userDNI.setText(LoginActivity.user.getDNI());
 
-        homeView = inflater.inflate(R.layout.fragment_user, container, false);
         return homeView;
     }
 }

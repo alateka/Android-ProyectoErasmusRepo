@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.ProgressBar;
+import net.iescierva.erasmus.Model.Document;
 import net.iescierva.erasmus.Model.User;
 
 // SDK Android
@@ -16,6 +17,7 @@ import com.android.volley.*;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import net.iescierva.erasmus.R;
+import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         enterEmail = findViewById(R.id.enterEmail);
         enterPassword = findViewById(R.id.enterPassword);
         txtMessage = findViewById(R.id.txtMessage);
@@ -57,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         txtMessage.setText(R.string.loading_session);
 
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
-        String url = "http://192.168.7.111/api/loginonandroidapp";
+        String url = "http://192.168.7.221/api/loginonandroidapp";
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
@@ -102,5 +105,4 @@ public class LoginActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
-
 }

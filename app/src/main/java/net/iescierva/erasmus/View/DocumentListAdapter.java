@@ -13,7 +13,6 @@ import net.iescierva.erasmus.R;
 public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapter.ViewHolder>{
     private Document[] listdata;
 
-    // RecyclerView recycler_view;
     public DocumentListAdapter(Document[] listdata) {
         this.listdata = listdata;
     }
