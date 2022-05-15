@@ -15,4 +15,7 @@
     <string name="loading_session">Geting data...</string>
     <string name="txt_switch_document">Ir a Documentos</string>
     <string name="txt_switch_account">Account</string>
+    <string name="upload_completed">Upload Completed</string>
+    <string name="error_upload">Upload Error</string>
+    <string name="uploading_file">Uploading document</string>
 </resources>

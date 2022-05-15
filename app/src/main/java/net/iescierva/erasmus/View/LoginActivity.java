@@ -4,7 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.ProgressBar;
-import net.iescierva.erasmus.Model.Document;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import net.iescierva.erasmus.Model.User;
 
 // SDK Android
@@ -14,16 +15,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.*;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import net.iescierva.erasmus.R;
-import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-// JAVA API
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class LoginActivity extends AppCompatActivity {
 

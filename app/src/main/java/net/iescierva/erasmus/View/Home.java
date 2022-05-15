@@ -17,6 +17,8 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import net.gotev.uploadservice.UploadNotificationConfig;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
 
@@ -85,10 +87,6 @@ public class Home extends AppCompatActivity {
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.upload_file_action) {
-            showFileChooser();
-            return true;
-        }
-        if (id == R.id.refresh_documents) {
             showFileChooser();
             return true;
         }

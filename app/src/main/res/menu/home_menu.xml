@@ -5,9 +5,4 @@
             android:title="@string/btn_upload_file"
             android:orderInCategory="10"
             app:showAsAction="ifRoom" android:icon="@android:drawable/stat_sys_upload_done"/>
-    <item
-            android:id="@+id/refresh_documents"
-            android:title="@string/txt_switch_account"
-            android:orderInCategory="10"
-            app:showAsAction="ifRoom" android:icon="@android:drawable/ic_menu_rotate"/>
 </menu>

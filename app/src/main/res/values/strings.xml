@@ -14,4 +14,7 @@
     <string name="loading_session">Obteniendo información...</string>
     <string name="txt_switch_document">Ir a Documentos</string>
     <string name="txt_switch_account">Perfil</string>
+    <string name="upload_completed">Subida Completada</string>
+    <string name="error_upload">Error en la subida</string>
+    <string name="uploading_file">Subiendo documento</string>
 </resources>

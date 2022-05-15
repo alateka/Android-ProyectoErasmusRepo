@@ -2,21 +2,41 @@ package net.iescierva.erasmus.UseCase;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.NotificationChannel;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import net.gotev.uploadservice.MultipartUploadRequest;
+import net.gotev.uploadservice.UploadNotificationConfig;
+import net.iescierva.erasmus.R;
+import net.iescierva.erasmus.View.Home;
 import net.iescierva.erasmus.View.LoginActivity;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class OnMainMenuActivity {
     private Context contextMainMenuActivity;
+
+    private String uploadRequest;
+
+    private JSONObject data;
 
     private static final int STORAGE_PERMISSION_CODE = 123;
 
@@ -40,15 +60,16 @@ public class OnMainMenuActivity {
     }
 
     public void uploadMultipart(String path) {
-
         try {
             String uploadId = UUID.randomUUID().toString();
 
-            new MultipartUploadRequest(contextMainMenuActivity, uploadId, "http://192.168.7.221/api/uploadfile")
+            uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, "http://192.168.7.221/api/uploadfile")
                     .addFileToUpload(path, "file")
                     .addHeader("Authorization", "Bearer "+ LoginActivity.user.getApiToken())
                     .setMaxRetries(2)
                     .startUpload();
+
+            System.out.println("==> Upload Completed");
 
         } catch (Exception exc) {
             Toast.makeText(contextMainMenuActivity, exc.getMessage(), Toast.LENGTH_SHORT).show();
@@ -63,5 +84,33 @@ public class OnMainMenuActivity {
             Toast.makeText(contextMainMenuActivity, "Si no aceptas los permisos, no podrías subir documentos", Toast.LENGTH_SHORT).show();
         }
         ActivityCompat.requestPermissions((Activity) contextMainMenuActivity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+    }
+
+    public void reloadDocuments()
+    {
+        RequestQueue queue = Volley.newRequestQueue(contextMainMenuActivity);
+        String url = "http://192.168.7.221/api/documentlist";
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET,
+                url,
+                response -> {
+                        try {
+                            data = new JSONObject(response);
+                            LoginActivity.user.setDocumentList(data.getJSONArray("Data"));
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
+                    },
+                error -> {
+                    System.out.println("ERROR ==> "+error.getMessage());
+                }){
+            @Override
+            public Map<String,String> getHeaders() {
+                Map<String,String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer "+LoginActivity.user.getApiToken());
+                return headers;
+            }
+        };
+        queue.add(stringRequest);
     }
 }
