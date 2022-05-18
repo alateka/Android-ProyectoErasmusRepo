@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TFG</string>
+    <string name="app_name">Erasmus+</string>
     <string name="hint_password">Contraseña</string>
     <string name="hint_email">Correo Electrónico</string>
     <string name="btn_login">Iniciar Sesión</string>
@@ -17,4 +17,6 @@
     <string name="upload_completed">Subida Completada</string>
     <string name="error_upload">Error en la subida</string>
     <string name="uploading_file">Subiendo documento</string>
+    <string name="txt_refresh">Documentos actualizados</string>
+    <string name="txt_update_document">Subida completada</string>
 </resources>

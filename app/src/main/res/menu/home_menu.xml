@@ -4,5 +4,5 @@
             android:id="@+id/upload_file_action"
             android:title="@string/btn_upload_file"
             android:orderInCategory="10"
-            app:showAsAction="ifRoom" android:icon="@android:drawable/stat_sys_upload_done"/>
+            app:showAsAction="ifRoom" android:icon="@android:drawable/ic_menu_upload"/>
 </menu>

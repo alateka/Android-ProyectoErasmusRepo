@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TFG</string>
+    <string name="app_name">Erasmus+</string>
     <string name="hint_password">Password</string>
     <string name="hint_email">eMail</string>
     <string name="btn_login">Sign In</string>
@@ -18,4 +18,6 @@
     <string name="upload_completed">Upload Completed</string>
     <string name="error_upload">Upload Error</string>
     <string name="uploading_file">Uploading document</string>
+    <string name="txt_refresh">Documents updated</string>
+    <string name="txt_update_document">Upload completed</string>
 </resources>

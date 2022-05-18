@@ -20,6 +20,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import net.gotev.uploadservice.MultipartUploadRequest;
 import net.gotev.uploadservice.UploadNotificationConfig;
+import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.View.Home;
 import net.iescierva.erasmus.View.LoginActivity;
@@ -63,13 +64,14 @@ public class OnMainMenuActivity {
         try {
             String uploadId = UUID.randomUUID().toString();
 
-            uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, "http://192.168.7.221/api/uploadfile")
+            uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, App.IP+"/api/uploadfile")
                     .addFileToUpload(path, "file")
                     .addHeader("Authorization", "Bearer "+ LoginActivity.user.getApiToken())
                     .setMaxRetries(2)
                     .startUpload();
 
             System.out.println("==> Upload Completed");
+            Toast.makeText(contextMainMenuActivity, R.string.txt_update_document,Toast.LENGTH_LONG).show();
 
         } catch (Exception exc) {
             Toast.makeText(contextMainMenuActivity, exc.getMessage(), Toast.LENGTH_SHORT).show();
@@ -89,7 +91,7 @@ public class OnMainMenuActivity {
     public void reloadDocuments()
     {
         RequestQueue queue = Volley.newRequestQueue(contextMainMenuActivity);
-        String url = "http://192.168.7.221/api/documentlist";
+        String url = App.IP+"/api/documentlist";
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
                 url,
@@ -97,6 +99,7 @@ public class OnMainMenuActivity {
                         try {
                             data = new JSONObject(response);
                             LoginActivity.user.setDocumentList(data.getJSONArray("Data"));
+                            Toast.makeText(contextMainMenuActivity, R.string.txt_refresh,Toast.LENGTH_LONG).show();
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }

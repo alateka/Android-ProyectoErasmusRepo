@@ -2,10 +2,12 @@ package net.iescierva.erasmus.View;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.widget.ProgressBar;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.Model.User;
 
 // SDK Android
@@ -38,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
         enterEmail = findViewById(R.id.enterEmail);
         enterPassword = findViewById(R.id.enterPassword);
         txtMessage = findViewById(R.id.txtMessage);
@@ -58,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         txtMessage.setText(R.string.loading_session);
 
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
-        String url = "http://192.168.7.221/api/loginonandroidapp";
+        String url = App.IP+"/api/loginonandroidapp";
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
