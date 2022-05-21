@@ -76,6 +76,22 @@
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
         />
+        <TextView
+                android:text="@string/txt_user_cycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_user_cycle"
+                android:fontFamily="@font/ubuntu"
+                android:textSize="25sp"
+                android:textColor="#191919"
+        />
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_cycle"
+                android:fontFamily="@font/ubuntu"
+                android:textSize="19sp"
+        />
     </LinearLayout>
 
 </FrameLayout>

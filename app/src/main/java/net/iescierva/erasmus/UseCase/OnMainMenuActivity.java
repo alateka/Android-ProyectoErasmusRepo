@@ -2,15 +2,11 @@ package net.iescierva.erasmus.UseCase;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.NotificationChannel;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.view.View;
 import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -19,18 +15,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import net.gotev.uploadservice.MultipartUploadRequest;
-import net.gotev.uploadservice.UploadNotificationConfig;
 import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.R;
-import net.iescierva.erasmus.View.Home;
-import net.iescierva.erasmus.View.LoginActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class OnMainMenuActivity {
     private Context contextMainMenuActivity;
@@ -38,6 +29,7 @@ public class OnMainMenuActivity {
     private String uploadRequest;
 
     private JSONObject data;
+    private JSONArray ciclos;
 
     private static final int STORAGE_PERMISSION_CODE = 123;
 
@@ -66,7 +58,7 @@ public class OnMainMenuActivity {
 
             uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, App.IP+"/api/uploadfile")
                     .addFileToUpload(path, "file")
-                    .addHeader("Authorization", "Bearer "+ LoginActivity.user.getApiToken())
+                    .addHeader("Authorization", "Bearer "+ App.user.getApiToken())
                     .setMaxRetries(2)
                     .startUpload();
 
@@ -98,7 +90,7 @@ public class OnMainMenuActivity {
                 response -> {
                         try {
                             data = new JSONObject(response);
-                            LoginActivity.user.setDocumentList(data.getJSONArray("Data"));
+                            App.user.setDocumentList(data.getJSONArray("Data"));
                             Toast.makeText(contextMainMenuActivity, R.string.txt_refresh,Toast.LENGTH_LONG).show();
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
@@ -110,10 +102,43 @@ public class OnMainMenuActivity {
             @Override
             public Map<String,String> getHeaders() {
                 Map<String,String> headers = new HashMap<>();
-                headers.put("Authorization", "Bearer "+LoginActivity.user.getApiToken());
+                headers.put("Authorization", "Bearer "+App.user.getApiToken());
                 return headers;
             }
         };
         queue.add(stringRequest);
+    }
+
+    public ArrayList<String> getCycles(ArrayList<String> spinnerItems)
+    {
+        RequestQueue queue = Volley.newRequestQueue(contextMainMenuActivity);
+        String url = App.IP+"/api/cycle_list";
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.GET,
+                url,
+                response -> {
+                    try {
+                        ciclos = new JSONArray(response);
+                        for (int i = 0; i < ciclos.length(); i++) {
+                            if ( !ciclos.getJSONObject(i).getString("Name").contains(App.user.getCycleName()) ) {
+                                spinnerItems.add(ciclos.getJSONObject(i).getString("Name"));
+                            }
+                        }
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                error -> {
+                    System.out.println("ERROR ==> "+error.getMessage());
+                }){
+            @Override
+            public Map<String,String> getHeaders() {
+                Map<String,String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer "+App.user.getApiToken());
+                return headers;
+            }
+        };
+        queue.add(stringRequest);
+        return spinnerItems;
     }
 }

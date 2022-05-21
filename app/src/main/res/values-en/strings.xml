@@ -20,4 +20,8 @@
     <string name="uploading_file">Uploading document</string>
     <string name="txt_refresh">Documents updated</string>
     <string name="txt_update_document">Upload completed</string>
+    <string name="txt_edit_user">Edit my data</string>
+    <string name="spinner_fp">Cycle</string>
+    <string name="not_selected">Not selected</string>
+    <string name="txt_user_cycle">PF</string>
 </resources>

@@ -27,7 +27,6 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public static User user;
     private TextView txtMessage;
     private EditText enterEmail;
     private EditText enterPassword;
@@ -88,15 +87,16 @@ public class LoginActivity extends AppCompatActivity {
         txtMessage.setVisibility(View.INVISIBLE);
         try {
             JSONObject jsonData = new JSONObject(response);
-            user = new User(
+            App.user = new User(
                     jsonData.getString("AccessToken"),
                     jsonData.getString("Name"),
                     jsonData.getString("LastName"),
                     jsonData.getString("Email"),
                     jsonData.getString("DNI"),
-                    jsonData.getJSONArray("Documents")
+                    jsonData.getJSONArray("Documents"),
+                    jsonData.getInt("cycle_id"),
+                    jsonData.getString("cycle_name")
             );
-
             System.out.println("==> OK :: Started User Session");
             Intent i = new Intent(this, Home.class);
             startActivity(i);

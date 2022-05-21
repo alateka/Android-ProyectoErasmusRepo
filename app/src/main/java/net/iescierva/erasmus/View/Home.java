@@ -34,6 +34,8 @@ public class Home extends AppCompatActivity {
 
     private DocumentFragment documentFragment;
 
+    private Intent launchEditActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,6 +91,11 @@ public class Home extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.upload_file_action) {
             showFileChooser();
+            return true;
+        }
+        if (id == R.id.user_edit_action) {
+            launchEditActivity = new Intent(this, EditActivity.class);
+            startActivity(launchEditActivity);
             return true;
         }
         return super.onOptionsItemSelected(item);

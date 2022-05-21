@@ -19,4 +19,8 @@
     <string name="uploading_file">Subiendo documento</string>
     <string name="txt_refresh">Documentos actualizados</string>
     <string name="txt_update_document">Subida completada</string>
+    <string name="txt_edit_user">Editar mis datos</string>
+    <string name="spinner_fp">Ciclo</string>
+    <string name="not_selected">No seleccionado</string>
+    <string name="txt_user_cycle">FP</string>
 </resources>

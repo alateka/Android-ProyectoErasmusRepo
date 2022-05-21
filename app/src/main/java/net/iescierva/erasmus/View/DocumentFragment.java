@@ -1,26 +1,16 @@
 package net.iescierva.erasmus.View;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.*;
-import android.widget.Toast;
-import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import net.gotev.uploadservice.UploadNotificationConfig;
+import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.Model.Document;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
-import net.iescierva.erasmus.View.DocumentListAdapter;
-import net.iescierva.erasmus.View.LoginActivity;
 import org.json.JSONException;
-
-import java.util.Collections;
-
-import static android.app.Activity.RESULT_OK;
 
 public class DocumentFragment extends Fragment {
 
@@ -49,10 +39,10 @@ public class DocumentFragment extends Fragment {
 
         onMainMenu = new OnMainMenuActivity(this.getContext());
         try {
-            Document[] documents = new Document[LoginActivity.user.getDocumentList().length()];
+            Document[] documents = new Document[App.user.getDocumentList().length()];
 
-            for (int i = 0; i < LoginActivity.user.getDocumentList().length(); i++) {
-                documents[i] = new Document(i, LoginActivity.user.getDocumentList().getJSONObject(i).getString("documento"));
+            for (int i = 0; i < App.user.getDocumentList().length(); i++) {
+                documents[i] = new Document(i, App.user.getDocumentList().getJSONObject(i).getString("documento"));
             }
             DocumentListAdapter adapter = new DocumentListAdapter(documents);
 
@@ -73,10 +63,10 @@ public class DocumentFragment extends Fragment {
 
     public void RearrangeItems() {
         onMainMenu.reloadDocuments();
-        documents = new Document[LoginActivity.user.getDocumentList().length()];
+        documents = new Document[App.user.getDocumentList().length()];
         try {
-            for (int i = 0; i < LoginActivity.user.getDocumentList().length(); i++) {
-                documents[i] = new Document(i, LoginActivity.user.getDocumentList().getJSONObject(i).getString("documento"));
+            for (int i = 0; i < App.user.getDocumentList().length(); i++) {
+                documents[i] = new Document(i, App.user.getDocumentList().getJSONObject(i).getString("documento"));
             }
             adapter = new DocumentListAdapter(documents);
             recyclerView.setAdapter(adapter);

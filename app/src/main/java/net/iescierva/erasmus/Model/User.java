@@ -1,7 +1,6 @@
 package net.iescierva.erasmus.Model;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class User {
 
@@ -11,14 +10,18 @@ public class User {
     private String email;
     private String DNI;
     private JSONArray documentList;
+    private int cycleID;
+    private String cycleName;
 
-    public User(String apiToken, String name, String lastName, String email, String dni, JSONArray documentList) {
+    public User(String apiToken, String name, String lastName, String email, String dni, JSONArray documentList, int cycleID, String cycleName) {
         this.apiToken = apiToken;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.DNI = dni;
         this.documentList = documentList;
+        this.cycleID = cycleID;
+        this.cycleName = cycleName;
     }
 
     public String getApiToken() {
@@ -67,5 +70,21 @@ public class User {
 
     public void setDocumentList(JSONArray documentList) {
         this.documentList = documentList;
+    }
+
+    public int getCycleID() {
+        return cycleID;
+    }
+
+    public void setCycleID(int cycleID) {
+        this.cycleID = cycleID;
+    }
+
+    public String getCycleName() {
+        return cycleName;
+    }
+
+    public void setCycleName(String cycleName) {
+        this.cycleName = cycleName;
     }
 }
