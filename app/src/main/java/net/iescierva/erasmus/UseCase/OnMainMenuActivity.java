@@ -56,7 +56,7 @@ public class OnMainMenuActivity {
         try {
             String uploadId = UUID.randomUUID().toString();
 
-            uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, App.IP+"/api/uploadfile")
+            uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, App.IP+"/api/upload_file")
                     .addFileToUpload(path, "file")
                     .addHeader("Authorization", "Bearer "+ App.user.getApiToken())
                     .setMaxRetries(2)
@@ -83,7 +83,7 @@ public class OnMainMenuActivity {
     public void reloadDocuments()
     {
         RequestQueue queue = Volley.newRequestQueue(contextMainMenuActivity);
-        String url = App.IP+"/api/documentlist";
+        String url = App.IP+"/api/document_list";
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
                 url,
@@ -119,11 +119,11 @@ public class OnMainMenuActivity {
                 response -> {
                     try {
                         ciclos = new JSONArray(response);
-                        for (int i = 0; i < ciclos.length(); i++) {
-                            if ( !ciclos.getJSONObject(i).getString("Name").contains(App.user.getCycleName()) ) {
+
+                        for (int i = 0; i < ciclos.length(); i++)
+                            if ( !ciclos.getJSONObject(i).getString("Name").contains(App.user.getCycleName()) )
                                 spinnerItems.add(ciclos.getJSONObject(i).getString("Name"));
-                            }
-                        }
+
                     } catch (JSONException e) {
                         throw new RuntimeException(e);
                     }
@@ -140,5 +140,45 @@ public class OnMainMenuActivity {
         };
         queue.add(stringRequest);
         return spinnerItems;
+    }
+
+    public void updateUser(String name, String DNI, String lastName, String email, String cycleSelected, String birthDate, String nationality, String locality, String phone, String address, String zip)
+    {
+        RequestQueue queue = Volley.newRequestQueue(contextMainMenuActivity);
+        String url = App.IP+"/api/update_user";
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                url,
+                response -> {
+                    System.out.println(response);
+                },
+                error -> {
+                    System.out.println("ERROR ==> "+error.getMessage());
+                }){
+            @Override
+            public Map<String,String> getHeaders() {
+                Map<String,String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer "+App.user.getApiToken());
+                return headers;
+            }
+            @Override
+            public Map<String,String> getParams() {
+                Map<String,String> headers = new HashMap<>();
+                headers.put("name", name);
+                headers.put("last_name", lastName);
+                headers.put("email", email);
+                headers.put("birth_date", birthDate);
+                headers.put("cycle_name", cycleSelected);
+                headers.put("dni", DNI);
+                headers.put("nationality", nationality);
+                headers.put("phone", phone);
+                headers.put("locality", locality);
+                headers.put("address", address);
+                headers.put("zip", zip);
+                return headers;
+            }
+        };
+        queue.add(stringRequest);
     }
 }

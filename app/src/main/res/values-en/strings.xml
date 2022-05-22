@@ -24,4 +24,10 @@
     <string name="spinner_fp">Cycle</string>
     <string name="not_selected">Not selected</string>
     <string name="txt_user_cycle">PF</string>
+    <string name="txt_birth_date">Birth date</string>
+    <string name="txt_user_nationality">Nationality</string>
+    <string name="txt_user_phone">Phone</string>
+    <string name="txt_user_locality">Locality</string>
+    <string name="txt_user_address">Address</string>
+    <string name="txt_user_zip_code">ZIP Code</string>
 </resources>

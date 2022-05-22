@@ -1,7 +1,6 @@
 package net.iescierva.erasmus.View;
 
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +18,6 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.gotev.uploadservice.UploadNotificationConfig;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
 
@@ -93,7 +91,7 @@ public class Home extends AppCompatActivity {
             showFileChooser();
             return true;
         }
-        if (id == R.id.user_edit_action) {
+        if (id == R.id.user_save_action) {
             launchEditActivity = new Intent(this, EditActivity.class);
             startActivity(launchEditActivity);
             return true;

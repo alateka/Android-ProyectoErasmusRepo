@@ -16,6 +16,12 @@ public class UserFragment extends Fragment {
     private TextView userEmail;
     private TextView userDNI;
     private TextView userCycle;
+    private TextView userBirthDate;
+    private TextView userNationality;
+    private TextView userLocality;
+    private TextView userPhone;
+    private TextView userAddress;
+    private TextView userZIP;
     private View homeView;
     public UserFragment() {
 
@@ -37,12 +43,25 @@ public class UserFragment extends Fragment {
         userEmail = homeView.findViewById(R.id.user_email);
         userDNI = homeView.findViewById(R.id.user_dni);
         userCycle = homeView.findViewById(R.id.user_cycle);
+        userBirthDate = homeView.findViewById(R.id.user_birth_date);
+        userNationality = homeView.findViewById(R.id.user_nationality);
+        userLocality = homeView.findViewById(R.id.user_locality);
+        userAddress = homeView.findViewById(R.id.user_address);
+        userZIP = homeView.findViewById(R.id.user_zip_code);
+        userPhone = homeView.findViewById(R.id.user_phone);
+
 
         userName.setText(App.user.getName());
         userLastName.setText(App.user.getLastName());
         userEmail.setText(App.user.getEmail());
         userDNI.setText(App.user.getDNI());
         userCycle.setText(App.user.getCycleName());
+        userBirthDate.setText(App.user.getBirthDate());
+        userNationality.setText(App.user.getNationality());
+        userLocality.setText(App.user.getLocality());
+        userAddress.setText(App.user.getAddress());
+        userZIP.setText(App.user.getZip());
+        userPhone.setText(App.user.getPhone());
 
         return homeView;
     }

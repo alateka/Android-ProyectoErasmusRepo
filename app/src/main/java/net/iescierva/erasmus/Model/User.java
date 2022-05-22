@@ -12,8 +12,14 @@ public class User {
     private JSONArray documentList;
     private int cycleID;
     private String cycleName;
+    private String birthDate;
+    private String nationality;
+    private String locality;
+    private String phone;
+    private String address;
+    private String zip;
 
-    public User(String apiToken, String name, String lastName, String email, String dni, JSONArray documentList, int cycleID, String cycleName) {
+    public User(String apiToken, String name, String lastName, String email, String dni, JSONArray documentList, int cycleID, String cycleName, String birthDate, String nationality, String locality, String phone, String address, String zip) {
         this.apiToken = apiToken;
         this.name = name;
         this.lastName = lastName;
@@ -22,6 +28,12 @@ public class User {
         this.documentList = documentList;
         this.cycleID = cycleID;
         this.cycleName = cycleName;
+        this.birthDate = birthDate;
+        this.nationality = nationality;
+        this.locality = locality;
+        this.phone = phone;
+        this.address = address;
+        this.zip = zip;
     }
 
     public String getApiToken() {
@@ -86,5 +98,53 @@ public class User {
 
     public void setCycleName(String cycleName) {
         this.cycleName = cycleName;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        birthDate = birthDate;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getLocality() {
+        return locality;
+    }
+
+    public void setLocality(String locality) {
+        this.locality = locality;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
     }
 }

@@ -2,7 +2,6 @@ package net.iescierva.erasmus.View;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.widget.ProgressBar;
 import com.android.volley.toolbox.StringRequest;
@@ -94,8 +93,14 @@ public class LoginActivity extends AppCompatActivity {
                     jsonData.getString("Email"),
                     jsonData.getString("DNI"),
                     jsonData.getJSONArray("Documents"),
-                    jsonData.getInt("cycle_id"),
-                    jsonData.getString("cycle_name")
+                    jsonData.getInt("CycleID"),
+                    jsonData.getString("CycleName"),
+                    jsonData.getString("Date"),
+                    jsonData.getString("Nationality"),
+                    jsonData.getString("Locality"),
+                    jsonData.getString("Phone"),
+                    jsonData.getString("Address"),
+                    jsonData.getString("ZIP")
             );
             System.out.println("==> OK :: Started User Session");
             Intent i = new Intent(this, Home.class);
