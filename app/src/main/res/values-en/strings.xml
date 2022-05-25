@@ -30,4 +30,6 @@
     <string name="txt_user_locality">Locality</string>
     <string name="txt_user_address">Address</string>
     <string name="txt_user_zip_code">ZIP Code</string>
+    <string name="txt_show_document">Show document</string>
+    <string name="txt_delete_document">Delete document</string>
 </resources>

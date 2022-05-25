@@ -29,4 +29,6 @@
     <string name="txt_user_locality">Localidad</string>
     <string name="txt_user_address">Dirección</string>
     <string name="txt_user_zip_code">Código Postal</string>
+    <string name="txt_show_document">Ver documento</string>
+    <string name="txt_delete_document">Eliminar documento</string>
 </resources>

@@ -181,4 +181,34 @@ public class OnMainMenuActivity {
         };
         queue.add(stringRequest);
     }
+
+    public void deleteDocumentByID(String id)
+    {
+        RequestQueue queue = Volley.newRequestQueue(contextMainMenuActivity);
+        String url = App.IP+"/api/remove_document";
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                url,
+                response -> {
+                    System.out.println(response);
+                },
+                error -> {
+                    System.out.println("ERROR ==> "+error.getMessage());
+                }){
+            @Override
+            public Map<String,String> getHeaders() {
+                Map<String,String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer "+App.user.getApiToken());
+                return headers;
+            }
+            @Override
+            public Map<String,String> getParams() {
+                Map<String,String> headers = new HashMap<>();
+                headers.put("id", id);
+                return headers;
+            }
+        };
+        queue.add(stringRequest);
+    }
 }

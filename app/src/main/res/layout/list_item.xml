@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/relativeLayout"
-                android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeightLarge">
+              android:id="@+id/relativeLayout"
+              android:layout_width="match_parent"
+              android:layout_height="?android:attr/listPreferredItemHeightLarge" android:orientation="horizontal">
 
     <TextView
             android:id="@+id/document_id"
@@ -20,5 +20,9 @@
             android:gravity="center_vertical"
             android:textSize="16sp"
             android:fontFamily="@font/ubuntu"/>
+    <Button
+            android:text=":"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content" android:id="@+id/document_options"/>
 
 </RelativeLayout>

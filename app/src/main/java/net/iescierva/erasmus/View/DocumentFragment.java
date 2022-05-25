@@ -42,9 +42,9 @@ public class DocumentFragment extends Fragment {
             Document[] documents = new Document[App.user.getDocumentList().length()];
 
             for (int i = 0; i < App.user.getDocumentList().length(); i++) {
-                documents[i] = new Document(i, App.user.getDocumentList().getJSONObject(i).getString("documento"));
+                documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"), App.user.getDocumentList().getJSONObject(i).getString("documento"));
             }
-            DocumentListAdapter adapter = new DocumentListAdapter(documents);
+            DocumentListAdapter adapter = new DocumentListAdapter(documents, onMainMenu);
 
             swipeRefreshLayout = homeView.findViewById(R.id.swipeRefreshLayout);
             recyclerView = homeView.findViewById(R.id.recycler_view);
@@ -53,7 +53,7 @@ public class DocumentFragment extends Fragment {
             recyclerView.setAdapter(adapter);
             swipeRefreshLayout.setOnRefreshListener(() -> {
                 swipeRefreshLayout.setRefreshing(false);
-                RearrangeItems();
+                rearrangeItems();
             });
         } catch (JSONException e) {
             System.out.println("==> ERROR: "+e.getMessage());
@@ -61,14 +61,14 @@ public class DocumentFragment extends Fragment {
         return homeView;
     }
 
-    public void RearrangeItems() {
+    public void rearrangeItems() {
         onMainMenu.reloadDocuments();
         documents = new Document[App.user.getDocumentList().length()];
         try {
             for (int i = 0; i < App.user.getDocumentList().length(); i++) {
-                documents[i] = new Document(i, App.user.getDocumentList().getJSONObject(i).getString("documento"));
+                documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"), App.user.getDocumentList().getJSONObject(i).getString("documento"));
             }
-            adapter = new DocumentListAdapter(documents);
+            adapter = new DocumentListAdapter(documents, onMainMenu);
             recyclerView.setAdapter(adapter);
         } catch (JSONException e) {
             System.out.println("==> ERROR: "+e.getMessage());
