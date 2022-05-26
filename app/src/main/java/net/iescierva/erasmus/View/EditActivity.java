@@ -20,8 +20,6 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
     private EditText userLastName;
     private EditText userEmail;
     private EditText userDNI;
-    private ArrayList<String> spinnerItems;
-    private Spinner spinner;
     private TextView userBirthDate;
     private TextView userNationality;
     private TextView userLocality;
@@ -60,12 +58,12 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
         userZIP.setText(App.user.getZip());
         userPhone.setText(App.user.getPhone());
 
-        spinner = findViewById(R.id.spinner_fp);
+        Spinner spinner = findViewById(R.id.spinner_fp);
         spinner.setOnItemSelectedListener(this);
-        spinnerItems = new ArrayList();
+        ArrayList<String> spinnerItems = new ArrayList();
         spinnerItems = onMainMenu.getCycles(spinnerItems);
         spinnerItems.add(App.user.getCycleName());
-        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerItems);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerItems);
         spinner.setAdapter(adapter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     }

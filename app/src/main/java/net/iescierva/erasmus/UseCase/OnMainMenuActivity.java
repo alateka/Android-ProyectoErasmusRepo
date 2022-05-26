@@ -24,12 +24,12 @@ import org.json.JSONObject;
 import java.util.*;
 
 public class OnMainMenuActivity {
-    private Context contextMainMenuActivity;
-
-    private String uploadRequest;
+    private final Context contextMainMenuActivity;
 
     private JSONObject data;
     private JSONArray ciclos;
+
+    public String uploadRequest;
 
     private static final int STORAGE_PERMISSION_CODE = 123;
 
@@ -56,9 +56,9 @@ public class OnMainMenuActivity {
         try {
             String uploadId = UUID.randomUUID().toString();
 
-            uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, App.IP+"/api/upload_file")
+            uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, App.IP + "/api/upload_file")
                     .addFileToUpload(path, "file")
-                    .addHeader("Authorization", "Bearer "+ App.user.getApiToken())
+                    .addHeader("Authorization", "Bearer " + App.user.getApiToken())
                     .setMaxRetries(2)
                     .startUpload();
 
@@ -96,9 +96,7 @@ public class OnMainMenuActivity {
                             throw new RuntimeException(e);
                         }
                     },
-                error -> {
-                    System.out.println("ERROR ==> "+error.getMessage());
-                }){
+                error -> System.out.println("ERROR ==> "+error.getMessage())){
             @Override
             public Map<String,String> getHeaders() {
                 Map<String,String> headers = new HashMap<>();
@@ -128,9 +126,7 @@ public class OnMainMenuActivity {
                         throw new RuntimeException(e);
                     }
                 },
-                error -> {
-                    System.out.println("ERROR ==> "+error.getMessage());
-                }){
+                error -> System.out.println("ERROR ==> "+error.getMessage())){
             @Override
             public Map<String,String> getHeaders() {
                 Map<String,String> headers = new HashMap<>();
@@ -150,12 +146,8 @@ public class OnMainMenuActivity {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
-                response -> {
-                    System.out.println(response);
-                },
-                error -> {
-                    System.out.println("ERROR ==> "+error.getMessage());
-                }){
+                System.out::println,
+                error -> System.out.println("ERROR ==> "+error.getMessage())){
             @Override
             public Map<String,String> getHeaders() {
                 Map<String,String> headers = new HashMap<>();
@@ -190,12 +182,8 @@ public class OnMainMenuActivity {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
-                response -> {
-                    System.out.println(response);
-                },
-                error -> {
-                    System.out.println("ERROR ==> "+error.getMessage());
-                }){
+                System.out::println,
+                error -> System.out.println("ERROR ==> "+error.getMessage())){
             @Override
             public Map<String,String> getHeaders() {
                 Map<String,String> headers = new HashMap<>();

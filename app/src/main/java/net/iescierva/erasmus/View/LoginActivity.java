@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     private TextView txtMessage;
     private EditText enterEmail;
     private EditText enterPassword;
-    private Button btnLogin;
     private ProgressBar progressBar;
 
 
@@ -43,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         txtMessage = findViewById(R.id.txtMessage);
         progressBar = findViewById(R.id.indeterminateBar);
 
-        btnLogin = findViewById(R.id.btnLogin);
+        Button btnLogin = findViewById(R.id.btnLogin);
         txtMessage.setVisibility(View.INVISIBLE);
 
         btnLogin.setOnClickListener(view -> login());
@@ -61,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
-                response -> createSession(response),
+                this::createSession,
                 error -> {
                     System.out.println("ERROR ==> "+error.getMessage());
                     progressBar.setVisibility(View.INVISIBLE);

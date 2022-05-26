@@ -17,10 +17,7 @@ public class DocumentFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
-    private View homeView;
     private OnMainMenuActivity onMainMenu;
-    private Document[] documents;
-    private DocumentListAdapter adapter;
 
     public DocumentFragment() {
 
@@ -35,7 +32,7 @@ public class DocumentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        homeView = inflater.inflate(R.layout.fragment_document, container, false);
+        View homeView = inflater.inflate(R.layout.fragment_document, container, false);
 
         onMainMenu = new OnMainMenuActivity(this.getContext());
         try {
@@ -63,12 +60,12 @@ public class DocumentFragment extends Fragment {
 
     public void rearrangeItems() {
         onMainMenu.reloadDocuments();
-        documents = new Document[App.user.getDocumentList().length()];
+        Document[] documents = new Document[App.user.getDocumentList().length()];
         try {
             for (int i = 0; i < App.user.getDocumentList().length(); i++) {
                 documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"), App.user.getDocumentList().getJSONObject(i).getString("documento"));
             }
-            adapter = new DocumentListAdapter(documents, onMainMenu);
+            DocumentListAdapter adapter = new DocumentListAdapter(documents, onMainMenu);
             recyclerView.setAdapter(adapter);
         } catch (JSONException e) {
             System.out.println("==> ERROR: "+e.getMessage());

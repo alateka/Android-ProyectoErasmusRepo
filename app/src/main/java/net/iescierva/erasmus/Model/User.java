@@ -105,7 +105,7 @@ public class User {
     }
 
     public void setBirthDate(String birthDate) {
-        birthDate = birthDate;
+        this.birthDate = birthDate;
     }
 
     public String getNationality() {

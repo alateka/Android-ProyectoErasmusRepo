@@ -1,8 +1,7 @@
 package net.iescierva.erasmus;
 
 
-import android.app.*;
-import android.os.Build;
+import android.app.Application;
 import net.iescierva.erasmus.Model.User;
 
 public class App extends Application {

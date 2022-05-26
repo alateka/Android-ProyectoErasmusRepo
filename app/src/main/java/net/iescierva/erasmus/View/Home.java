@@ -17,22 +17,14 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
 
 public class Home extends AppCompatActivity {
-    private ViewPager viewPager;
-    private TabLayout tabLayout;
-    private UserFragment userFragment;
-
-    private final int CHOOSE_FILE = 1;
 
     private OnMainMenuActivity onMainMenu;
-
-    private DocumentFragment documentFragment;
-
-    private Intent launchEditActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +34,10 @@ public class Home extends AppCompatActivity {
         onMainMenu = new OnMainMenuActivity(this.getApplicationContext());
         onMainMenu.requestStoragePermission();
 
-        viewPager = findViewById(R.id.view_pager);
-        tabLayout = findViewById(R.id.tab_layout);
-        userFragment = new UserFragment();
-        documentFragment = new DocumentFragment();
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        UserFragment userFragment = new UserFragment();
+        DocumentFragment documentFragment = new DocumentFragment();
         tabLayout.setupWithViewPager(viewPager);
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 0);
@@ -54,12 +46,12 @@ public class Home extends AppCompatActivity {
         viewPagerAdapter.addFragment(documentFragment, String.valueOf(R.string.txt_documents_list));
         viewPager.setAdapter(viewPagerAdapter);
 
-        tabLayout.getTabAt(0).setText(R.string.txt_user_data);
-        tabLayout.getTabAt(1).setText(R.string.txt_documents_list);
+        Objects.requireNonNull(tabLayout.getTabAt(0)).setText(R.string.txt_user_data);
+        Objects.requireNonNull(tabLayout.getTabAt(1)).setText(R.string.txt_documents_list);
     }
-    private class ViewPagerAdapter extends FragmentPagerAdapter {
-        private List<Fragment> fragments = new ArrayList<>();
-        private List<String> fragmentTitles = new ArrayList<>();
+    private static class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> fragments = new ArrayList<>();
+        private final List<String> fragmentTitles = new ArrayList<>();
         public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
             super(fm, behavior);
         }
@@ -92,7 +84,7 @@ public class Home extends AppCompatActivity {
             return true;
         }
         if (id == R.id.user_save_action) {
-            launchEditActivity = new Intent(this, EditActivity.class);
+            Intent launchEditActivity = new Intent(this, EditActivity.class);
             startActivity(launchEditActivity);
             return true;
         }
@@ -106,13 +98,11 @@ public class Home extends AppCompatActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case 1:
-                if (resultCode == RESULT_OK) {
-                    Uri uri = data.getData();
-                    onMainMenu.uploadMultipart(onMainMenu.getFilePath(uri));
-                }
-                break;
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                Uri uri = data.getData();
+                onMainMenu.uploadMultipart(onMainMenu.getFilePath(uri));
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -123,6 +113,7 @@ public class Home extends AppCompatActivity {
         intent.addCategory(Intent.CATEGORY_OPENABLE);
 
         try {
+            int CHOOSE_FILE = 1;
             startActivityForResult(
                     Intent.createChooser(intent, ""), CHOOSE_FILE);
 
