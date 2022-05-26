@@ -29,18 +29,18 @@ public class DocumentFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View homeView = inflater.inflate(R.layout.fragment_document, container, false);
 
         onMainMenu = new OnMainMenuActivity(this.getContext());
+
         try {
             Document[] documents = new Document[App.user.getDocumentList().length()];
 
-            for (int i = 0; i < App.user.getDocumentList().length(); i++) {
+            for (int i = 0; i < App.user.getDocumentList().length(); i++)
                 documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"), App.user.getDocumentList().getJSONObject(i).getString("documento"));
-            }
+
             DocumentListAdapter adapter = new DocumentListAdapter(documents, onMainMenu);
 
             swipeRefreshLayout = homeView.findViewById(R.id.swipeRefreshLayout);
@@ -62,9 +62,9 @@ public class DocumentFragment extends Fragment {
         onMainMenu.reloadDocuments();
         Document[] documents = new Document[App.user.getDocumentList().length()];
         try {
-            for (int i = 0; i < App.user.getDocumentList().length(); i++) {
+            for (int i = 0; i < App.user.getDocumentList().length(); i++)
                 documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"), App.user.getDocumentList().getJSONObject(i).getString("documento"));
-            }
+
             DocumentListAdapter adapter = new DocumentListAdapter(documents, onMainMenu);
             recyclerView.setAdapter(adapter);
         } catch (JSONException e) {

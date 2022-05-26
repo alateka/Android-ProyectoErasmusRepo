@@ -26,7 +26,6 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
     private TextView userPhone;
     private TextView userAddress;
     private TextView userZIP;
-
     private String cycleSelected;
 
     @Override

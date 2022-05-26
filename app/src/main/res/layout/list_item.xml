@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/relativeLayout"
-              android:layout_width="match_parent"
-              android:layout_height="?android:attr/listPreferredItemHeightLarge" android:orientation="horizontal">
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/listPreferredItemHeightLarge" android:orientation="horizontal"
+                android:layout_marginTop="15dp" android:background="#F1F1F1">
 
-    <TextView
-            android:id="@+id/document_id"
+    <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:fontFamily="@font/ubuntu"/>
-
+            android:layout_height="49dp" app:srcCompat="@android:drawable/ic_input_get"
+            android:id="@+id/image_view" android:layout_marginTop="15dp" android:paddingRight="7dp"
+            android:paddingLeft="9dp"/>
     <TextView
             android:id="@+id/document_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@id/document_id"
+            android:layout_toEndOf="@id/image_view"
             android:gravity="center_vertical"
             android:textSize="16sp"
             android:fontFamily="@font/ubuntu"/>
-    <Button
-            android:text=":"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content" android:id="@+id/document_options"/>
+    <TextView
+            android:id="@+id/document_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/image_view"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:fontFamily="@font/ubuntu"/>
+
 
 </RelativeLayout>

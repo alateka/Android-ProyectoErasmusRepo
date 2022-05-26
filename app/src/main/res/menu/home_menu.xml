@@ -5,6 +5,8 @@
     <item
             android:id="@+id/upload_file_action"
             android:title="@string/btn_upload_file"
-            android:orderInCategory="10"
-            app:showAsAction="ifRoom" android:icon="@android:drawable/ic_menu_upload"/>
+            app:showAsAction="ifRoom"
+            android:icon="@android:drawable/ic_menu_upload"/>
+    <item android:title="@string/txt_about_app" android:icon="@android:drawable/ic_menu_help"
+          android:id="@+id/about_app_action" app:showAsAction="ifRoom"/>
 </menu>

@@ -7,10 +7,12 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import net.iescierva.erasmus.Model.Document;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
+import org.w3c.dom.Text;
 
 public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapter.ViewHolder>{
     private final Document[] listdata;
@@ -31,9 +33,9 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         final Document document = listdata[position];
         holder.documentName.setText(document.getDocumentName());
-        final Button button = holder.documentOptions;
-        holder.documentOptions.setOnClickListener(v -> {
-            PopupMenu popup = new PopupMenu(v.getContext(), button);
+        final RelativeLayout relativeLayout = holder.relativeLayout;
+        holder.relativeLayout.setOnClickListener(v -> {
+            PopupMenu popup = new PopupMenu(v.getContext(), relativeLayout);
             popup.inflate(R.menu.document_option_menu);
             popup.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
@@ -59,13 +61,11 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView documentID;
         public TextView documentName;
-        public Button documentOptions;
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {
             super(itemView);
-            this.documentID = itemView.findViewById(R.id.document_id);
-            this.documentName = itemView.findViewById(R.id.document_name);
-            this.documentOptions = itemView.findViewById(R.id.document_options);
+            documentID = itemView.findViewById(R.id.document_id);
+            documentName = itemView.findViewById(R.id.document_name);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
         }
     }

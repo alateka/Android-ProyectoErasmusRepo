@@ -88,6 +88,11 @@ public class Home extends AppCompatActivity {
             startActivity(launchEditActivity);
             return true;
         }
+        if (id == R.id.about_app_action) {
+            Intent launchAboutActivity = new Intent(this, AboutActivity.class);
+            startActivity(launchAboutActivity);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -98,12 +103,12 @@ public class Home extends AppCompatActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1) {
+        if (requestCode == 1)
             if (resultCode == RESULT_OK) {
                 Uri uri = data.getData();
                 onMainMenu.uploadMultipart(onMainMenu.getFilePath(uri));
             }
-        }
+
         super.onActivityResult(requestCode, resultCode, data);
     }
 

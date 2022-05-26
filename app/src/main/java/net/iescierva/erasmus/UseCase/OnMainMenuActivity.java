@@ -15,6 +15,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import net.gotev.uploadservice.MultipartUploadRequest;
+import net.gotev.uploadservice.UploadNotificationConfig;
 import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.R;
 import org.json.JSONArray;
@@ -46,9 +47,8 @@ public class OnMainMenuActivity {
             cursor.moveToFirst();
             return cursor.getString(column_index);
         } finally {
-            if (cursor != null) {
+            if (cursor != null)
                 cursor.close();
-            }
         }
     }
 
@@ -58,14 +58,13 @@ public class OnMainMenuActivity {
 
             uploadRequest = new MultipartUploadRequest(contextMainMenuActivity, uploadId, App.IP + "/api/upload_file")
                     .addFileToUpload(path, "file")
+                    .setNotificationConfig(new UploadNotificationConfig())
                     .addHeader("Authorization", "Bearer " + App.user.getApiToken())
                     .setMaxRetries(2)
                     .startUpload();
 
-            System.out.println("==> Upload Completed");
-            Toast.makeText(contextMainMenuActivity, R.string.txt_update_document,Toast.LENGTH_LONG).show();
-
         } catch (Exception exc) {
+            System.out.println(exc.getMessage());
             Toast.makeText(contextMainMenuActivity, exc.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
@@ -74,9 +73,9 @@ public class OnMainMenuActivity {
         if (ContextCompat.checkSelfPermission(contextMainMenuActivity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
             return;
 
-        if (!ActivityCompat.shouldShowRequestPermissionRationale((Activity) contextMainMenuActivity, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+        if (!ActivityCompat.shouldShowRequestPermissionRationale((Activity) contextMainMenuActivity, Manifest.permission.READ_EXTERNAL_STORAGE))
             Toast.makeText(contextMainMenuActivity, "Si no aceptas los permisos, no podrías subir documentos", Toast.LENGTH_SHORT).show();
-        }
+
         ActivityCompat.requestPermissions((Activity) contextMainMenuActivity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
 
