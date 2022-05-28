@@ -29,7 +29,8 @@
                 android:label="@string/label_about"/>
         <activity
                 android:name=".View.EditActivity"
-                android:exported="true"/>
+                android:label="@string/txt_user_data_edit"/>
+        android:exported="true"/>
         <activity
                 android:name=".View.Home"
                 android:exported="true"

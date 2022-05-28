@@ -36,4 +36,6 @@
     <string name="txt_app_description">Descripción de la APP</string>
     <string name="label_about">About APP</string>
     <string name="message_open_pdf">Downloading...</string>
+    <string name="txt_user_data_edit">Edit profile</string>
+    <string name="txt_document_deleted">Document_deleted</string>
 </resources>

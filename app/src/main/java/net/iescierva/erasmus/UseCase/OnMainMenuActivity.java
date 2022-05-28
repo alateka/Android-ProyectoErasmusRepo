@@ -194,8 +194,8 @@ public class OnMainMenuActivity {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
-                System.out::println,
-                error -> System.out.println("ERROR ==> "+error.getMessage())){
+                response -> Toast.makeText(contextActivity, R.string.txt_document_deleted, Toast.LENGTH_LONG).show(),
+                error -> Toast.makeText(contextActivity, "ERROR :(", Toast.LENGTH_LONG).show()){
             @Override
             public Map<String,String> getHeaders() {
                 Map<String,String> headers = new HashMap<>();
