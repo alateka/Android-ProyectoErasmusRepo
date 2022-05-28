@@ -214,6 +214,8 @@ public class OnMainMenuActivity {
         HashMap<String,String> headers = new HashMap<>();
         headers.put("Authorization", "Bearer "+App.user.getApiToken());
 
+        Toast.makeText(contextActivity, R.string.message_open_pdf, Toast.LENGTH_LONG).show();
+
         InputStreamVolleyRequest request = new InputStreamVolleyRequest(Request.Method.GET, url,
                 response -> {
                     try {
@@ -237,17 +239,17 @@ public class OnMainMenuActivity {
                                 contextActivity.startActivity(pdfOpenIntent);
                             } catch (ActivityNotFoundException activityNotFoundException) {
                                 Toast.makeText(contextActivity,"There is no app to load corresponding PDF",Toast.LENGTH_LONG).show();
-
                             }
                         }
                     } catch (Exception e) {
                         Log.d("KEY_ERROR", "UNABLE TO DOWNLOAD FILE");
                         e.printStackTrace();
                     }
-                }, Throwable::printStackTrace, headers);
+                },
+                error -> Toast.makeText(contextActivity, "ERROR :(", Toast.LENGTH_LONG).show(),
+                headers
+        );
         RequestQueue mRequestQueue = Volley.newRequestQueue(contextActivity.getApplicationContext(), new HurlStack());
         mRequestQueue.add(request);
-
-        Toast.makeText(contextActivity, R.string.message_open_pdf, Toast.LENGTH_LONG).show();
     }
 }
