@@ -1,13 +1,19 @@
 package net.iescierva.erasmus.View;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -21,6 +27,10 @@ import java.util.Objects;
 
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
+
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.os.Build.VERSION.SDK_INT;
+import static android.provider.Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION;
 
 public class Home extends AppCompatActivity {
 
@@ -49,6 +59,7 @@ public class Home extends AppCompatActivity {
         Objects.requireNonNull(tabLayout.getTabAt(0)).setText(R.string.txt_user_data);
         Objects.requireNonNull(tabLayout.getTabAt(1)).setText(R.string.txt_documents_list);
     }
+
     private static class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> fragments = new ArrayList<>();
         private final List<String> fragmentTitles = new ArrayList<>();

@@ -40,4 +40,5 @@ dependencies {
     implementation 'net.gotev:uploadservice:3.4'
     implementation 'com.android.support:design:31.0.0'
     implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 }

@@ -29,9 +29,10 @@
     <string name="txt_user_locality">Localidad</string>
     <string name="txt_user_address">Dirección</string>
     <string name="txt_user_zip_code">Código Postal</string>
-    <string name="txt_show_document">Ver documento</string>
-    <string name="txt_delete_document">Eliminar documento</string>
+    <string name="txt_show_document">Abrir</string>
+    <string name="txt_delete_document">Eliminar</string>
     <string name="txt_about_app">Acerca de la APP</string>
     <string name="txt_app_description">Descripción de la APP</string>
     <string name="label_about">Sobre la APP</string>
+    <string name="message_open_pdf">Descargando...</string>
 </resources>

@@ -3,16 +3,13 @@ package net.iescierva.erasmus.View;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import net.iescierva.erasmus.Model.Document;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
-import org.w3c.dom.Text;
 
 public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapter.ViewHolder>{
     private final Document[] listdata;
@@ -40,7 +37,7 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
             popup.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
                     case R.id.show_document:
-                        System.out.println("Selecionado ==> "+document.getId());
+                        onMainMenu.downloadAndOpenPDF(document.getId(), document.getDocumentName());
                         return true;
                     case R.id.delete_document:
                         onMainMenu.deleteDocumentByID(document.getId());
