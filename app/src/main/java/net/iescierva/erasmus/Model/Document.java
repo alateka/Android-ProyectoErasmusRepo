@@ -7,7 +7,7 @@ package net.iescierva.erasmus.Model;
 public class Document {
 
     private String id;
-    private String documentName;
+    private final String documentName;
 
     /**
      * Clase diseñada para representar los documentos en la APP.

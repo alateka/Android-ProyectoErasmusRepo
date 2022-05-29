@@ -17,7 +17,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        // Linea necesaría para el funcionamiento de algunas notificaciónes
+        // Notificaciónes de subida de archivos (gotev - uploadservice)
+        // Es necesarío declarar el espacio de nombres en la constante "NAMESPACE" de la clase "UploadService"
+        // que en este caso es "net.iescierva.erasmus"
         UploadService.NAMESPACE = BuildConfig.APPLICATION_ID;
 
         System.out.println("Started Application");

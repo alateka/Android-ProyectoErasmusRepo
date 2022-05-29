@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         txtMessage.setText(R.string.loading_session);
 
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
-        String url = App.IP+"/api/loginonandroidapp";
+        String url = App.IP+"/api/login_on_android_app";
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
@@ -81,6 +81,11 @@ public class LoginActivity extends AppCompatActivity {
         queue.add(stringRequest);
     }
 
+    /**
+     * Crea una instancia de la clase User donde se
+     * almacenará toda la información recogida desde la API
+     * @param response El JSON devuelto por la API al iniciar la llamada "login_on_android_app"
+     */
     private void createSession(String response)
     {
         progressBar.setVisibility(View.INVISIBLE);
