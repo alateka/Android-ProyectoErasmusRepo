@@ -37,5 +37,8 @@
     <string name="label_about">About APP</string>
     <string name="message_open_pdf">Downloading...</string>
     <string name="txt_user_data_edit">Edit profile</string>
-    <string name="txt_document_deleted">Document_deleted</string>
+    <string name="txt_document_deleted">Document deleted</string>
+    <string name="erasmus_logo_description">Erasmus image</string>
+    <string name="txt_error_modifying_data">Error modifying data</string>
+    <string name="txt_modified_data">Completed update</string>
 </resources>

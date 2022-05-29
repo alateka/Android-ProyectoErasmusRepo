@@ -22,7 +22,8 @@
             android:roundIcon="@mipmap/erasmus_app_logo"
             android:supportsRtl="true"
             android:theme="@style/Theme.Erasmus"
-            android:usesCleartextTraffic="true">
+            android:usesCleartextTraffic="true"
+            android:fullBackupContent="true">
         <activity
                 android:name=".View.AboutActivity"
                 android:exported="true"
@@ -30,9 +31,8 @@
         <activity
                 android:name=".View.EditActivity"
                 android:label="@string/txt_user_data_edit"/>
-        android:exported="true"/>
         <activity
-                android:name=".View.Home"
+                android:name=".View.HomeActivity"
                 android:exported="true"
                 android:label="@string/txt_user_data"/>
         <activity

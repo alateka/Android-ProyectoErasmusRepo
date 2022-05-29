@@ -31,7 +31,8 @@
                 android:id="@+id/enterPassword"
                 android:hint="@string/hint_password" android:textSize="23sp"
                 android:fontFamily="@font/ubuntu"
-                android:text="12345678" android:gravity="center" android:layout_gravity="center"/>
+                android:text="12345678" android:gravity="center" android:layout_gravity="center"
+                android:autofillHints=""/>
         <Button
                 android:text="@string/btn_login"
                 android:layout_width="wrap_content"

@@ -1,7 +1,10 @@
+// Author ==> Alberto Pérez Fructuoso
+// File   ==> App.java
+// Date   ==> 2022/05/29
+
 package net.iescierva.erasmus;
 
 
-import android.Manifest;
 import android.app.Application;
 import net.gotev.uploadservice.UploadService;
 import net.iescierva.erasmus.Model.User;
@@ -13,7 +16,10 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // Linea necesaría para el funcionamiento de algunas notificaciónes
         UploadService.NAMESPACE = BuildConfig.APPLICATION_ID;
+
         System.out.println("Started Application");
     }
 }

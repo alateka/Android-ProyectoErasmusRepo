@@ -1,19 +1,17 @@
+// Author ==> Alberto Pérez Fructuoso
+// File   ==> HomeActivity.java
+// Date   ==> 2022/05/29
+
 package net.iescierva.erasmus.View;
 
-import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -26,23 +24,19 @@ import java.util.List;
 import java.util.Objects;
 
 import net.iescierva.erasmus.R;
-import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
+import net.iescierva.erasmus.UseCase.Actions;
 
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static android.os.Build.VERSION.SDK_INT;
-import static android.provider.Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION;
+public class HomeActivity extends AppCompatActivity {
 
-public class Home extends AppCompatActivity {
-
-    private OnMainMenuActivity onMainMenu;
+    private Actions activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        onMainMenu = new OnMainMenuActivity(this.getApplicationContext());
-        onMainMenu.requestStoragePermission();
+        activity = new Actions(this.getApplicationContext());
+        activity.requestStoragePermission();
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
@@ -117,7 +111,7 @@ public class Home extends AppCompatActivity {
         if (requestCode == 1)
             if (resultCode == RESULT_OK) {
                 Uri uri = data.getData();
-                onMainMenu.uploadMultipart(onMainMenu.getFilePath(uri));
+                activity.uploadMultipart(activity.getFilePath(uri));
             }
 
         super.onActivityResult(requestCode, resultCode, data);

@@ -1,3 +1,7 @@
+// Author ==> Alberto Pérez Fructuoso
+// File   ==> LoginActivity.java
+// Date   ==> 2022/05/29
+
 package net.iescierva.erasmus.View;
 
 import android.content.Intent;
@@ -90,7 +94,6 @@ public class LoginActivity extends AppCompatActivity {
                     jsonData.getString("Email"),
                     jsonData.getString("DNI"),
                     jsonData.getJSONArray("Documents"),
-                    jsonData.getInt("CycleID"),
                     jsonData.getString("CycleName"),
                     jsonData.getString("Date"),
                     jsonData.getString("Nationality"),
@@ -100,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                     jsonData.getString("ZIP")
             );
             System.out.println("==> OK :: Started User Session");
-            Intent i = new Intent(this, Home.class);
+            Intent i = new Intent(this, HomeActivity.class);
             startActivity(i);
         } catch (JSONException e) {
             throw new RuntimeException(e);

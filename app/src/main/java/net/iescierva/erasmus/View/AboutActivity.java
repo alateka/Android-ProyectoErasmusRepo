@@ -1,3 +1,7 @@
+// Author ==> Alberto Pérez Fructuoso
+// File   ==> AboutActivity.java
+// Date   ==> 2022/05/29
+
 package net.iescierva.erasmus.View;
 
 import androidx.appcompat.app.AppCompatActivity;

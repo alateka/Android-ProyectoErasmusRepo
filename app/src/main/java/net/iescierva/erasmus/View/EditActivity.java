@@ -1,3 +1,7 @@
+// Author ==> Alberto Pérez Fructuoso
+// File   ==> EditActivity.java
+// Date   ==> 2022/05/29
+
 package net.iescierva.erasmus.View;
 
 import android.content.Intent;
@@ -9,13 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.R;
-import net.iescierva.erasmus.UseCase.OnMainMenuActivity;
+import net.iescierva.erasmus.UseCase.Actions;
 
 import java.util.ArrayList;
 
 public class EditActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private OnMainMenuActivity onMainMenu;
+    private Actions activity;
     private EditText userName;
     private EditText userLastName;
     private EditText userEmail;
@@ -33,18 +37,18 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-        onMainMenu = new OnMainMenuActivity(this.getApplicationContext());
+        activity = new Actions(this.getApplicationContext());
 
         userName = findViewById(R.id.edit_user_name);
         userLastName = findViewById(R.id.edit_user_last_name);
         userEmail = findViewById(R.id.edit_user_email);
         userDNI = findViewById(R.id.edit_user_dni);
-        userBirthDate = findViewById(R.id.user_birth_date);
-        userNationality = findViewById(R.id.user_nationality);
-        userLocality = findViewById(R.id.user_locality);
-        userAddress = findViewById(R.id.user_address);
-        userZIP = findViewById(R.id.user_zip_code);
-        userPhone = findViewById(R.id.user_phone);
+        userBirthDate = findViewById(R.id.edit_user_birth_date);
+        userNationality = findViewById(R.id.edit_user_nationality);
+        userLocality = findViewById(R.id.edit_user_locality);
+        userAddress = findViewById(R.id.edit_user_address);
+        userZIP = findViewById(R.id.edit_user_zip_code);
+        userPhone = findViewById(R.id.edit_user_phone);
 
         userName.setText(App.user.getName());
         userLastName.setText(App.user.getLastName());
@@ -59,8 +63,8 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Spinner spinner = findViewById(R.id.spinner_fp);
         spinner.setOnItemSelectedListener(this);
-        ArrayList<String> spinnerItems = new ArrayList();
-        spinnerItems = onMainMenu.getCycles(spinnerItems);
+        ArrayList<String> spinnerItems = new ArrayList<>();
+        spinnerItems = activity.getCycles(spinnerItems);
         spinnerItems.add(App.user.getCycleName());
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerItems);
         spinner.setAdapter(adapter);
@@ -77,7 +81,7 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.user_save_action) {
-            onMainMenu.updateUser(
+            activity.updateUser(
                     userName.getText().toString(),
                     userDNI.getText().toString(),
                     userLastName.getText().toString(),
@@ -101,7 +105,7 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
             App.user.setPhone(userPhone.getText().toString());
             App.user.setAddress(userAddress.getText().toString());
             App.user.setZip(userZIP.getText().toString());
-            Intent i = new Intent(this, Home.class);
+            Intent i = new Intent(this, HomeActivity.class);
             startActivity(i);
             return true;
         }

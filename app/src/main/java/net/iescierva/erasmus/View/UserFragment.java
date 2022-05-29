@@ -1,3 +1,7 @@
+// Author ==> Alberto Pérez Fructuoso
+// File   ==> UserFragment.java
+// Date   ==> 2022/05/29
+
 package net.iescierva.erasmus.View;
 
 import android.os.Bundle;
@@ -31,12 +35,12 @@ public class UserFragment extends Fragment {
         TextView userEmail = homeView.findViewById(R.id.user_email);
         TextView userDNI = homeView.findViewById(R.id.user_dni);
         TextView userCycle = homeView.findViewById(R.id.user_cycle);
-        TextView userBirthDate = homeView.findViewById(R.id.user_birth_date);
-        TextView userNationality = homeView.findViewById(R.id.user_nationality);
-        TextView userLocality = homeView.findViewById(R.id.user_locality);
-        TextView userAddress = homeView.findViewById(R.id.user_address);
-        TextView userZIP = homeView.findViewById(R.id.user_zip_code);
-        TextView userPhone = homeView.findViewById(R.id.user_phone);
+        TextView userBirthDate = homeView.findViewById(R.id.edit_user_birth_date);
+        TextView userNationality = homeView.findViewById(R.id.edit_user_nationality);
+        TextView userLocality = homeView.findViewById(R.id.edit_user_locality);
+        TextView userAddress = homeView.findViewById(R.id.edit_user_address);
+        TextView userZIP = homeView.findViewById(R.id.edit_user_zip_code);
+        TextView userPhone = homeView.findViewById(R.id.edit_user_phone);
 
 
         userName.setText(App.user.getName());

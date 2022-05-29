@@ -32,9 +32,12 @@
     <string name="txt_show_document">Abrir</string>
     <string name="txt_delete_document">Eliminar</string>
     <string name="txt_about_app">Acerca de la APP</string>
-    <string name="txt_app_description">Descripción de la APP</string>
+    <string name="txt_app_description">Con Erasmus APP puede administrar todos sus documentos y datos personales</string>
     <string name="label_about">Sobre la APP</string>
     <string name="message_open_pdf">Descargando...</string>
     <string name="txt_user_data_edit">Editar perfil</string>
     <string name="txt_document_deleted">Documento eliminado</string>
+    <string name="erasmus_logo_description">Imagen de Erasmus</string>
+    <string name="txt_modified_data">Actualización completada</string>
+    <string name="txt_error_modifying_data">Error al modificar los datos</string>
 </resources>

@@ -1,3 +1,7 @@
+// Author ==> Alberto Pérez Fructuoso
+// File   ==> Actions.java
+// Date   ==> 2022/05/29
+
 package net.iescierva.erasmus.UseCase;
 
 import android.Manifest;
@@ -37,7 +41,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class OnMainMenuActivity {
+public class Actions {
     private final Context contextActivity;
 
     private JSONObject data;
@@ -47,10 +51,19 @@ public class OnMainMenuActivity {
 
     private static final int STORAGE_PERMISSION_CODE = 123;
 
-    public OnMainMenuActivity(Context contextActivity) {
+    /**
+     * Clase dedicada a los casos de uso y acciones por parte del usuario.
+     * @param contextActivity El contexto de la actividad sobre la que se invoca el objeto.
+     */
+    public Actions(Context contextActivity) {
         this.contextActivity = contextActivity;
     }
 
+    /**
+     * Devuelve la ruta completa de un fichero.
+     * @param uri
+     * @return La ruta del fichero, que en este caso son los documentos.
+     */
     public String getFilePath(Uri uri) {
         Cursor cursor = null;
         try {
@@ -65,6 +78,11 @@ public class OnMainMenuActivity {
         }
     }
 
+    /**
+     * Realiza la subida del documento seleccionado al servidor
+     * con la ayuda del servicio Android Upload Service (gotev).
+     * @param path La ruta del fichero a subir.
+     */
     public void uploadMultipart(String path) {
         try {
             String uploadId = UUID.randomUUID().toString();
@@ -82,6 +100,9 @@ public class OnMainMenuActivity {
         }
     }
 
+    /**
+     * Control de permisos de escritura.
+     */
     public void requestStoragePermission() {
         if (ContextCompat.checkSelfPermission(contextActivity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
             return;
@@ -92,6 +113,9 @@ public class OnMainMenuActivity {
         ActivityCompat.requestPermissions((Activity) contextActivity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
 
+    /**
+     * Refresca el listado de documentos.
+     */
     public void reloadDocuments()
     {
         RequestQueue queue = Volley.newRequestQueue(contextActivity);
@@ -119,6 +143,11 @@ public class OnMainMenuActivity {
         queue.add(stringRequest);
     }
 
+    /**
+     * Añade los ciclos formativos actuales al Spinner en cuestión obteniendolos desde la API.
+     * @param spinnerItems
+     * @return El ArrayList con los ciclos formativos añadidos desde la API.
+     */
     public ArrayList<String> getCycles(ArrayList<String> spinnerItems)
     {
         RequestQueue queue = Volley.newRequestQueue(contextActivity);
@@ -150,6 +179,20 @@ public class OnMainMenuActivity {
         return spinnerItems;
     }
 
+    /**
+     * Actualiza los datos actuales del usuario.
+     * @param name Nuevo nombre del usuario.
+     * @param DNI Nuevo DNI del usuario.
+     * @param lastName Nuevo apellidos del usuario.
+     * @param email Nuevo correo electrónico del usuario.
+     * @param cycleSelected Nombre existente del ciclo formativo.
+     * @param birthDate Nuevo fecha de nacimiento del usuario.
+     * @param nationality Nueva nacionalidad del usuario.
+     * @param locality Nueva localidad del usuario.
+     * @param phone Nuevo numero de teléfono del usuario.
+     * @param address Nueva dirección del usuario.
+     * @param zip Nuevo código postal del usuario.
+     */
     public void updateUser(String name, String DNI, String lastName, String email, String cycleSelected, String birthDate, String nationality, String locality, String phone, String address, String zip)
     {
         RequestQueue queue = Volley.newRequestQueue(contextActivity);
@@ -158,8 +201,15 @@ public class OnMainMenuActivity {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 url,
-                System.out::println,
-                error -> System.out.println("ERROR ==> "+error.getMessage())){
+                response -> {
+                    if ( response.contains("OK") ) {
+                        Toast.makeText(contextActivity, R.string.txt_modified_data, Toast.LENGTH_LONG).show();
+                    }
+                },
+                error -> {
+                    System.out.println("ERROR ==> "+error.getMessage());
+                    Toast.makeText(contextActivity, R.string.txt_error_modifying_data, Toast.LENGTH_LONG).show();
+                }){
             @Override
             public Map<String,String> getHeaders() {
                 Map<String,String> headers = new HashMap<>();
@@ -186,6 +236,10 @@ public class OnMainMenuActivity {
         queue.add(stringRequest);
     }
 
+    /**
+     * Elimina un documento del usuario pasando como referencia su ID.
+     * @param id ID del documento a borrar.
+     */
     public void deleteDocumentByID(String id)
     {
         RequestQueue queue = Volley.newRequestQueue(contextActivity);
@@ -206,6 +260,11 @@ public class OnMainMenuActivity {
         queue.add(stringRequest);
     }
 
+    /**
+     * Descarga y visualiza un documento.
+     * @param id ID del documento a mostrar.
+     * @param name Nombre del documento a mostrar.
+     */
     public void downloadAndOpenPDF(String id, String name) {
 
         String url = App.IP+"/api/download_document?id="+id;

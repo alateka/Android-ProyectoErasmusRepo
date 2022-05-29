@@ -1,16 +1,19 @@
+// Author ==> Alberto Pérez Fructuoso
+// File   ==> User.java
+// Date   ==> 2022/05/29
+
 package net.iescierva.erasmus.Model;
 
 import org.json.JSONArray;
 
 public class User {
 
-    private String apiToken;
+    private final String apiToken;
     private String name;
     private String lastName;
     private String email;
     private String DNI;
     private JSONArray documentList;
-    private int cycleID;
     private String cycleName;
     private String birthDate;
     private String nationality;
@@ -19,14 +22,29 @@ public class User {
     private String address;
     private String zip;
 
-    public User(String apiToken, String name, String lastName, String email, String dni, JSONArray documentList, int cycleID, String cycleName, String birthDate, String nationality, String locality, String phone, String address, String zip) {
+    /**
+     * Clase diseñada para representar los datos del usuario en la APP.
+     * @param apiToken El tocken de acceso a la API.
+     * @param name El nombre del alumno.
+     * @param lastName El apellido del alumno.
+     * @param email El correo electrónico del alumno.
+     * @param dni El DNI del alumno.
+     * @param documentList El listado de documentos devuelto por la API.
+     * @param cycleName El nombre del ciclo del alumno.
+     * @param birthDate La fecha de nacimiento del alumno (YYYY-MM-DD).
+     * @param nationality La nacionalidad del alumno.
+     * @param locality La localidad del alumno.
+     * @param phone El numero de teléfono del alumno.
+     * @param address La dirección del alumno.
+     * @param zip El código postal del alumno.
+     */
+    public User(String apiToken, String name, String lastName, String email, String dni, JSONArray documentList, String cycleName, String birthDate, String nationality, String locality, String phone, String address, String zip) {
         this.apiToken = apiToken;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.DNI = dni;
         this.documentList = documentList;
-        this.cycleID = cycleID;
         this.cycleName = cycleName;
         this.birthDate = birthDate;
         this.nationality = nationality;
@@ -38,10 +56,6 @@ public class User {
 
     public String getApiToken() {
         return apiToken;
-    }
-
-    public void setApiToken(String apiToken) {
-        this.apiToken = apiToken;
     }
 
     public String getName() {
@@ -82,14 +96,6 @@ public class User {
 
     public void setDocumentList(JSONArray documentList) {
         this.documentList = documentList;
-    }
-
-    public int getCycleID() {
-        return cycleID;
-    }
-
-    public void setCycleID(int cycleID) {
-        this.cycleID = cycleID;
     }
 
     public String getCycleName() {
