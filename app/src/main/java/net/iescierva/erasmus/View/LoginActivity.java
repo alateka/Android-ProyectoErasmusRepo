@@ -4,8 +4,12 @@
 
 package net.iescierva.erasmus.View;
 
+import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +21,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import net.gotev.uploadservice.UploadServiceConfig;
 import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.Model.User;
 import net.iescierva.erasmus.R;
@@ -38,6 +43,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // Se configura el servicio de subida de archivos de gotev.
+        UploadServiceConfig.initialize(getApplication(), App.notificationChannelId, false);
+
 
         enterEmail = findViewById(R.id.enterEmail);
         enterPassword = findViewById(R.id.enterPassword);

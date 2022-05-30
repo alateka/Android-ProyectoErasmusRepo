@@ -4,24 +4,39 @@
 
 package net.iescierva.erasmus;
 
-
+import android.annotation.SuppressLint;
 import android.app.Application;
-import net.gotev.uploadservice.UploadService;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.os.Build;
 import net.iescierva.erasmus.Model.User;
 
 public class App extends Application {
     public static final String IP = "http://erasmus.es";
     public static User user;
 
+    public static final String notificationChannelId = "erasmus_repo";
+
     @Override
     public void onCreate() {
         super.onCreate();
 
-        // Notificaciónes de subida de archivos (gotev - uploadservice)
-        // Es necesarío declarar el espacio de nombres en la constante "NAMESPACE" de la clase "UploadService"
-        // que en este caso es "net.iescierva.erasmus"
-        UploadService.NAMESPACE = BuildConfig.APPLICATION_ID;
+        createNotificationChannel();
 
         System.out.println("Started Application");
+    }
+
+    /**
+     * Crea el sistema de notificaciones para la APP.
+     */
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            @SuppressLint("WrongConstant") NotificationChannel channel = new NotificationChannel(notificationChannelId, name, NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 }

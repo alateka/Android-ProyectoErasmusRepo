@@ -3,7 +3,7 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/listPreferredItemHeightLarge" android:orientation="horizontal"
-                android:layout_marginTop="15dp" android:background="#F1F1F1">
+                android:layout_marginTop="15dp" android:background="#CFD9FF">
 
     <ImageView
             android:layout_width="wrap_content"

@@ -41,4 +41,6 @@
     <string name="erasmus_logo_description">Erasmus image</string>
     <string name="txt_error_modifying_data">Error modifying data</string>
     <string name="txt_modified_data">Completed update</string>
+    <string name="channel_name">erasmus_notifications</string>
+    <string name="channel_description">Erasmus notifications</string>
 </resources>

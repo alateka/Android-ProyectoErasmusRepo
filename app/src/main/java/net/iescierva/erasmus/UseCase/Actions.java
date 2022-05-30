@@ -25,8 +25,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import net.gotev.uploadservice.MultipartUploadRequest;
-import net.gotev.uploadservice.UploadNotificationConfig;
+import net.gotev.uploadservice.protocols.multipart.MultipartUploadRequest;
 import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.utils.InputStreamVolleyRequest;
@@ -85,11 +84,8 @@ public class Actions {
      */
     public void uploadMultipart(String path) {
         try {
-            String uploadId = UUID.randomUUID().toString();
-
-            uploadRequest = new MultipartUploadRequest(contextActivity, uploadId, App.IP + "/api/upload_file")
+            uploadRequest = new MultipartUploadRequest(contextActivity, App.IP + "/api/upload_file")
                     .addFileToUpload(path, "file")
-                    .setNotificationConfig(new UploadNotificationConfig())
                     .addHeader("Authorization", "Bearer " + App.user.getApiToken())
                     .setMaxRetries(2)
                     .startUpload();

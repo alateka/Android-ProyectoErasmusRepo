@@ -40,4 +40,6 @@
     <string name="erasmus_logo_description">Imagen de Erasmus</string>
     <string name="txt_modified_data">Actualización completada</string>
     <string name="txt_error_modifying_data">Error al modificar los datos</string>
+    <string name="channel_name">erasmus_notifications</string>
+    <string name="channel_description">Erasmus notifications</string>
 </resources>

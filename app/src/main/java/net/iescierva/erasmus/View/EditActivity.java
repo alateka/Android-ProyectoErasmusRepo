@@ -43,12 +43,12 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
         userLastName = findViewById(R.id.edit_user_last_name);
         userEmail = findViewById(R.id.edit_user_email);
         userDNI = findViewById(R.id.edit_user_dni);
-        userBirthDate = findViewById(R.id.edit_user_birth_date);
-        userNationality = findViewById(R.id.edit_user_nationality);
-        userLocality = findViewById(R.id.edit_user_locality);
-        userAddress = findViewById(R.id.edit_user_address);
-        userZIP = findViewById(R.id.edit_user_zip_code);
-        userPhone = findViewById(R.id.edit_user_phone);
+        userBirthDate = findViewById(R.id.user_birth_date);
+        userNationality = findViewById(R.id.user_nationality);
+        userLocality = findViewById(R.id.user_locality);
+        userAddress = findViewById(R.id.user_address);
+        userZIP = findViewById(R.id.user_zip_code);
+        userPhone = findViewById(R.id.user_phone);
 
         userName.setText(App.user.getName());
         userLastName.setText(App.user.getLastName());
