@@ -4,12 +4,8 @@
 
 package net.iescierva.erasmus.View;
 
-import android.annotation.SuppressLint;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +28,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+/**
+ * Actividad inicial de la aplicacion para el inicio de sesión del usuario.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private TextView txtMessage;

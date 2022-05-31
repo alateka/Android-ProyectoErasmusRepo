@@ -12,7 +12,7 @@
     <string name="user_name">Name</string>
     <string name="txt_user_dni">Identification (DNI/NIF)</string>
     <string name="user_last_name">Last Name</string>
-    <string name="loading_session">Geting data...</string>
+    <string name="loading_session">Getting data...</string>
     <string name="txt_switch_document">Ir a Documentos</string>
     <string name="txt_switch_account">Account</string>
     <string name="upload_completed">Upload Completed</string>

@@ -141,7 +141,8 @@ public class Actions {
 
     /**
      * Añade los ciclos formativos actuales al Spinner en cuestión obteniendolos desde la API.
-     * @param spinnerItems
+     * De tal forma que si se añadieran nuevos ciclos a la BD, estos se importarían al spinner sin problemas.
+     * @param spinnerItems El spinner al que se desea añadir los ciclos.
      * @return El ArrayList con los ciclos formativos añadidos desde la API.
      */
     public ArrayList<String> getCycles(ArrayList<String> spinnerItems)

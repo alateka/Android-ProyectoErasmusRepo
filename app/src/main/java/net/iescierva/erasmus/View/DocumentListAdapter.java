@@ -17,6 +17,9 @@ import net.iescierva.erasmus.Model.Document;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.Actions;
 
+/**
+ * Clase encargada de instanciar el adaptador para el recycler view donde se representarán los documentos.
+ */
 public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapter.ViewHolder>{
     private final Document[] listdata;
     private final Actions activity;

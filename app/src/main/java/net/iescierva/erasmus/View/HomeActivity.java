@@ -26,6 +26,10 @@ import java.util.Objects;
 import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.Actions;
 
+/**
+ * Actividad principal donde se instancia y adapta tanto la pestaña de
+ * datos del usuario (UserFragment.java) como la pestaña de documentos (DocumentFragment.java).
+ */
 public class HomeActivity extends AppCompatActivity {
 
     private Actions activity;

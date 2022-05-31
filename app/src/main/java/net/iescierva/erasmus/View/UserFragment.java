@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment;
 import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.R;
 
+/**
+ * Clase encargada de representar el contenido de la pestaña de datos del usuario.
+ */
 public class UserFragment extends Fragment {
 
     public UserFragment() {

@@ -17,6 +17,9 @@ import net.iescierva.erasmus.UseCase.Actions;
 
 import java.util.ArrayList;
 
+/**
+ * Actividad dedicada a la edición de los datos personales del usuario.
+ */
 public class EditActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private Actions activity;

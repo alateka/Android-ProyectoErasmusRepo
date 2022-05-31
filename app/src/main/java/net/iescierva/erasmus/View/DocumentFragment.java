@@ -18,6 +18,9 @@ import net.iescierva.erasmus.R;
 import net.iescierva.erasmus.UseCase.Actions;
 import org.json.JSONException;
 
+/**
+ * Clase encargada de representar el contenido de la pestaña de documentos en la APP.
+ */
 public class DocumentFragment extends Fragment {
 
 
