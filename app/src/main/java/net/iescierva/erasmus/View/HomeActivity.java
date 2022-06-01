@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        activity = new Actions(this.getApplicationContext());
+        activity = new Actions(this);
         activity.requestStoragePermission();
 
         ViewPager viewPager = findViewById(R.id.view_pager);
