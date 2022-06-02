@@ -32,7 +32,8 @@
     <string name="txt_show_document">Abrir</string>
     <string name="txt_delete_document">Eliminar</string>
     <string name="txt_about_app">Acerca de la APP</string>
-    <string name="txt_app_description">Con Erasmus APP puede administrar todos sus documentos y datos personales</string>
+    <string name="txt_app_description">Con la aplicación de Erasmus hecha con ❤️ por el IES Ingeniero de la Cierva puedes administrar todos tus documentos y datos personales sin entrar en la web.
+    </string>
     <string name="label_about">Sobre la APP</string>
     <string name="message_open_pdf">Descargando...</string>
     <string name="txt_user_data_edit">Editar perfil</string>
@@ -42,4 +43,5 @@
     <string name="txt_error_modifying_data">Error al modificar los datos</string>
     <string name="channel_name">erasmus_notifications</string>
     <string name="channel_description">Erasmus notifications</string>
+    <string name="txt_home">Menu principal</string>
 </resources>

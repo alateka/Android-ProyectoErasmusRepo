@@ -3,26 +3,32 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/listPreferredItemHeightLarge" android:orientation="horizontal"
-                android:layout_marginTop="15dp" android:background="#CFD9FF">
+                android:layout_marginTop="15dp" android:background="@drawable/box">
 
     <ImageView
+            android:layout_width="13dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/edit_text"
+    />
+    <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="49dp" app:srcCompat="@android:drawable/ic_input_get"
-            android:id="@+id/image_view" android:layout_marginTop="15dp" android:paddingEnd="7dp"
-            android:paddingStart="9dp" android:contentDescription="@string/erasmus_logo_description"/>
+            android:layout_height="match_parent"
+            app:srcCompat="@android:drawable/ic_input_get"
+            android:id="@+id/type_pdf"
+            android:layout_marginStart="19dp"/>
     <TextView
             android:id="@+id/document_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@id/image_view"
             android:gravity="center_vertical"
             android:textSize="16sp"
-            android:fontFamily="@font/ubuntu"/>
+            android:fontFamily="@font/ubuntu"
+            android:textColor="#ffffff"
+            android:layout_marginStart="59dp"/>
     <TextView
             android:id="@+id/document_id"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_toEndOf="@id/image_view"
             android:gravity="center_vertical"
             android:textSize="16sp"
             android:fontFamily="@font/ubuntu"/>

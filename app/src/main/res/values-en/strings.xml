@@ -33,7 +33,7 @@
     <string name="txt_show_document">Open</string>
     <string name="txt_delete_document">Remove</string>
     <string name="txt_about_app">About APP</string>
-    <string name="txt_app_description">Descripción de la APP</string>
+    <string name="txt_app_description">With Erasmus APP maked with ❤️ by IES Ingeniero de la Cierva you can manage all your data and documents without enter from web</string>
     <string name="label_about">About APP</string>
     <string name="message_open_pdf">Downloading...</string>
     <string name="txt_user_data_edit">Edit profile</string>
@@ -43,4 +43,5 @@
     <string name="txt_modified_data">Completed update</string>
     <string name="channel_name">erasmus_notifications</string>
     <string name="channel_description">Erasmus notifications</string>
+    <string name="txt_home">Main menu</string>
 </resources>

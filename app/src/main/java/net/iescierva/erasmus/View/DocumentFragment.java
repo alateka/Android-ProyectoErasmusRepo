@@ -72,7 +72,8 @@ public class DocumentFragment extends Fragment {
         Document[] documents = new Document[App.user.getDocumentList().length()];
         try {
             for (int i = 0; i < App.user.getDocumentList().length(); i++)
-                documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"), App.user.getDocumentList().getJSONObject(i).getString("documento"));
+                documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"),
+                        App.user.getDocumentList().getJSONObject(i).getString("documento"));
 
             DocumentListAdapter adapter = new DocumentListAdapter(documents, activity);
             recyclerView.setAdapter(adapter);

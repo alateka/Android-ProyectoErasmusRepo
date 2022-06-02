@@ -39,7 +39,8 @@
                 android:layout_height="wrap_content" android:id="@+id/btnLogin"
                 android:textSize="31sp"
                 android:fontFamily="@font/ubuntu"
-                android:gravity="center" android:layout_gravity="center" android:layout_marginTop="55dp"/>
+                android:gravity="center" android:layout_gravity="center" android:layout_marginTop="55dp"
+                android:textColor="#FFFFFF"/>
         <ProgressBar
                 android:id="@+id/indeterminateBar"
                 android:layout_width="wrap_content"

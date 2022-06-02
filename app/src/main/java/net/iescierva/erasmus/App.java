@@ -12,7 +12,7 @@ import android.os.Build;
 import net.iescierva.erasmus.Model.User;
 
 public class App extends Application {
-    public static final String IP = "http://dev.gestycloud.com:8881";
+    public static final String IP = "http://erasmus.albertico.tk:8881";
     public static User user;
 
     public static final String notificationChannelId = "erasmus_repo";

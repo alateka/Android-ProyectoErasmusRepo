@@ -34,7 +34,7 @@
         <activity
                 android:name=".View.HomeActivity"
                 android:exported="true"
-                android:label="@string/txt_user_data"/>
+                android:label="@string/txt_home"/>
         <activity
                 android:name=".View.LoginActivity"
                 android:exported="true"
