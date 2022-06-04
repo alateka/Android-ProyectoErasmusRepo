@@ -4,9 +4,6 @@
 
 package net.iescierva.erasmus.Model;
 
-import android.content.Context;
-import android.widget.ImageView;
-
 public class Document {
 
     private String id;
