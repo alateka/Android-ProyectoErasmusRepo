@@ -4,6 +4,9 @@
 
 package net.iescierva.erasmus.Model;
 
+import android.content.Context;
+import android.widget.ImageView;
+
 public class Document {
 
     private String id;
@@ -11,7 +14,8 @@ public class Document {
 
     /**
      * Clase diseñada para representar los documentos en la APP.
-     * @param id : ID del documento en la BD.
+     *
+     * @param id           : ID del documento en la BD.
      * @param documentName : Nombre del documento en la BD.
      */
     public Document(String id, String documentName) {

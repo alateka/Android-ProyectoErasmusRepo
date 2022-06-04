@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/relativeLayout"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="?android:attr/listPreferredItemHeightLarge" android:orientation="horizontal"
-                android:layout_marginTop="15dp" android:background="@drawable/box">
+                android:layout_height="?android:attr/listPreferredItemHeightLarge"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/box">
 
     <ImageView
             android:layout_width="13dp"
             android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/edit_text"
+            app:srcCompat="@android:drawable/radiobutton_off_background"
     />
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:srcCompat="@android:drawable/ic_input_get"
-            android:id="@+id/type_pdf"
+            app:srcCompat="@android:drawable/checkbox_off_background"
+            android:id="@+id/type_file"
             android:layout_marginStart="19dp"/>
     <TextView
             android:id="@+id/document_name"

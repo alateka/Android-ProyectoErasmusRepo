@@ -38,7 +38,6 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class Actions {
     private final Context contextActivity;
@@ -60,7 +59,6 @@ public class Actions {
 
     /**
      * Devuelve la ruta completa de un fichero.
-     * @param uri
      * @return La ruta del fichero, que en este caso son los documentos.
      */
     public String getFilePath(Uri uri) {

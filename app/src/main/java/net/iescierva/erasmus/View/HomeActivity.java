@@ -4,6 +4,7 @@
 
 package net.iescierva.erasmus.View;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.Menu;
@@ -31,7 +32,6 @@ import net.iescierva.erasmus.UseCase.Actions;
  * datos del usuario (UserFragment.java) como la pestaña de documentos (DocumentFragment.java).
  */
 public class HomeActivity extends AppCompatActivity {
-
     private Actions activity;
 
     @Override

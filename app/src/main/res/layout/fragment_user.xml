@@ -7,7 +7,9 @@
         android:layout_height="match_parent">
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:orientation="vertical" android:id="@+id/user_linear_layout" android:padding="15dp">
+                  android:orientation="vertical"
+                  android:id="@+id/user_linear_layout"
+                  android:padding="15dp">
         <TextView
                 android:text="@string/user_name"
                 android:layout_width="match_parent"
@@ -15,8 +17,12 @@
                 android:id="@+id/txt_name"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold" android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
                 android:textIsSelectable="false"/>
         <TextView
                 android:layout_width="match_parent"
@@ -25,8 +31,10 @@
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
                 android:layout_marginBottom="31dp"
-                android:textAlignment="center" android:background="#FFFFFF"
-                android:padding="11dp" android:textAllCaps="false"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
+                android:textAllCaps="false"
                 android:textColor="#000000"/>
         <TextView
                 android:text="@string/user_last_name"
@@ -35,8 +43,11 @@
                 android:id="@+id/txt_user_last_name"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +55,9 @@
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
                 android:layout_marginBottom="31dp"
-                android:textAlignment="center" android:background="#FFFFFF" android:padding="11dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
                 android:textColor="#000000"/>
         <TextView
                 android:text="@string/hint_email"
@@ -53,8 +66,11 @@
                 android:id="@+id/txt_user_email"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,7 +78,9 @@
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
                 android:layout_marginBottom="31dp"
-                android:textAlignment="center" android:background="#FFFFFF" android:padding="11dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
                 android:textColor="#000000"/>
         <TextView
                 android:text="@string/txt_user_cycle"
@@ -71,8 +89,11 @@
                 android:id="@+id/txt_user_cycle"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -80,7 +101,9 @@
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
                 android:layout_marginBottom="31dp"
-                android:textAlignment="center" android:background="#FFFFFF" android:padding="11dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
                 android:textColor="#000000"/>
         <TextView
                 android:text="@string/txt_user_nationality"
@@ -89,16 +112,22 @@
                 android:id="@+id/txt_user_nationality"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/user_nationality"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
-                android:layout_marginBottom="31dp" android:textAlignment="center" android:background="#FFFFFF"
-                android:padding="11dp" android:textColor="#000000"/>
+                android:layout_marginBottom="31dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
+                android:textColor="#000000"/>
         <TextView
                 android:text="@string/txt_user_phone"
                 android:layout_width="match_parent"
@@ -106,16 +135,22 @@
                 android:id="@+id/txt_user_phone"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/user_phone"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
-                android:layout_marginBottom="31dp" android:textAlignment="center" android:background="#FFFFFF"
-                android:padding="11dp" android:textColor="#000000"/>
+                android:layout_marginBottom="31dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
+                android:textColor="#000000"/>
         <TextView
                 android:text="@string/txt_user_zip_code"
                 android:layout_width="match_parent"
@@ -123,16 +158,22 @@
                 android:id="@+id/txt_user_zip_code"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/user_zip_code"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
-                android:layout_marginBottom="31dp" android:textAlignment="center" android:background="#FFFFFF"
-                android:padding="11dp" android:textColor="#000000"/>
+                android:layout_marginBottom="31dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
+                android:textColor="#000000"/>
         <TextView
                 android:text="@string/txt_user_dni"
                 android:layout_width="match_parent"
@@ -140,16 +181,22 @@
                 android:id="@+id/txt_user_dni"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/user_dni"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
-                android:layout_marginBottom="31dp" android:textAlignment="center" android:background="#FFFFFF"
-                android:padding="11dp" android:textColor="#000000"/>
+                android:layout_marginBottom="31dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
+                android:textColor="#000000"/>
         <TextView
                 android:text="@string/txt_user_address"
                 android:layout_width="match_parent"
@@ -157,16 +204,22 @@
                 android:id="@+id/txt_user_address"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/user_address"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
-                android:layout_marginBottom="31dp" android:textAlignment="center" android:background="#FFFFFF"
-                android:padding="11dp" android:textColor="#000000"/>
+                android:layout_marginBottom="31dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
+                android:textColor="#000000"/>
         <TextView
                 android:text="@string/txt_user_locality"
                 android:layout_width="match_parent"
@@ -174,16 +227,22 @@
                 android:id="@+id/txt_user_locality"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/user_locality"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="19sp"
-                android:layout_marginBottom="31dp" android:textAlignment="center" android:background="#FFFFFF"
-                android:padding="11dp" android:textColor="#000000"/>
+                android:layout_marginBottom="31dp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
+                android:textColor="#000000"/>
         <TextView
                 android:text="@string/txt_birth_date"
                 android:layout_width="match_parent"
@@ -191,14 +250,20 @@
                 android:id="@+id/txt_birth_date"
                 android:fontFamily="@font/ubuntu"
                 android:textSize="25sp"
-                android:textColor="#FFFFFF" android:background="@drawable/box" android:textAlignment="center"
-                android:padding="11dp" android:textStyle="bold"/>
+                android:textColor="#FFFFFF"
+                android:background="@drawable/box"
+                android:textAlignment="center"
+                android:padding="11dp"
+                android:textStyle="bold"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/user_birth_date"
                 android:fontFamily="@font/ubuntu"
-                android:textSize="19sp" android:textAlignment="center" android:background="#FFFFFF"
-                android:padding="11dp" android:textColor="#000000"/>
+                android:textSize="19sp"
+                android:textAlignment="center"
+                android:background="#FFFFFF"
+                android:padding="11dp"
+                android:textColor="#000000"/>
     </LinearLayout>
 </ScrollView>

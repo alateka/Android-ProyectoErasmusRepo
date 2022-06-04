@@ -4,10 +4,12 @@
 
 package net.iescierva.erasmus.View;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,8 +24,6 @@ import org.json.JSONException;
  * Clase encargada de representar el contenido de la pestaña de documentos en la APP.
  */
 public class DocumentFragment extends Fragment {
-
-
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
     private Actions activity;
@@ -39,7 +39,6 @@ public class DocumentFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View homeView = inflater.inflate(R.layout.fragment_document, container, false);
 
         activity = new Actions(this.getContext());
@@ -48,7 +47,9 @@ public class DocumentFragment extends Fragment {
             Document[] documents = new Document[App.user.getDocumentList().length()];
 
             for (int i = 0; i < App.user.getDocumentList().length(); i++)
-                documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"), App.user.getDocumentList().getJSONObject(i).getString("documento"));
+                documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"),
+                        App.user.getDocumentList().getJSONObject(i).getString("documento"));
+
 
             DocumentListAdapter adapter = new DocumentListAdapter(documents, activity);
 
@@ -70,6 +71,7 @@ public class DocumentFragment extends Fragment {
     public void rearrangeItems() {
         activity.reloadDocuments();
         Document[] documents = new Document[App.user.getDocumentList().length()];
+
         try {
             for (int i = 0; i < App.user.getDocumentList().length(); i++)
                 documents[i] = new Document(App.user.getDocumentList().getJSONObject(i).getString("id"),
