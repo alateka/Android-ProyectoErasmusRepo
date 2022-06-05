@@ -72,6 +72,8 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
 
 
 
+        // Se declara un menu popup para que al selecionar un documento del listado
+        // aparezcan las opciones para abrirlo o para eliminarlo.
         final RelativeLayout relativeLayout = holder.relativeLayout;
         holder.relativeLayout.setOnClickListener(v -> {
             PopupMenu popup = new PopupMenu(v.getContext(), relativeLayout);
@@ -100,7 +102,6 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView documentID;
         public TextView documentName;
-
         public ImageView typeFile;
         public RelativeLayout relativeLayout;
         public ViewHolder(View itemView) {

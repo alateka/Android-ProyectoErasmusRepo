@@ -12,6 +12,8 @@ import android.os.Build;
 import net.iescierva.erasmus.Model.User;
 
 public class App extends Application {
+    // Constante usada para indicar el host donde se esta alogando la web
+    // para poder hacer uso de la API.
     public static final String IP = "http://erasmus.albertico.tk:81";
     public static User user;
 

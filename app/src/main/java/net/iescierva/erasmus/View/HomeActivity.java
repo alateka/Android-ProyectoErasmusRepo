@@ -32,15 +32,15 @@ import net.iescierva.erasmus.UseCase.Actions;
  * datos del usuario (UserFragment.java) como la pestaña de documentos (DocumentFragment.java).
  */
 public class HomeActivity extends AppCompatActivity {
-    private Actions activity;
+    private Actions actions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        activity = new Actions(this);
-        activity.requestStoragePermission();
+        actions = new Actions(this);
+        actions.requestStoragePermission();
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
@@ -50,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 0);
 
+        // Se configuran las pestañas para cada sección (Datos del usuario | Listado de documentos)
         viewPagerAdapter.addFragment(userFragment, String.valueOf(R.string.txt_user_data));
         viewPagerAdapter.addFragment(documentFragment, String.valueOf(R.string.txt_documents_list));
         viewPager.setAdapter(viewPagerAdapter);
@@ -86,6 +87,23 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Este método crea el menu de opciones en la barra de herramientas.
+     * @param menu El menu sobre el que añadir las opciones.
+     *
+     * @return
+     */
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.home_menu, menu);
+        return true;
+    }
+
+    /**
+     * Este método se encarga de ejecutar la función de la opción del menu que fue seleccionada.
+     * @param item La opción del menu que fue seleccionada.
+     *
+     * @return
+     */
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.upload_file_action) {
@@ -105,22 +123,20 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.home_menu, menu);
-        return true;
-    }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1)
             if (resultCode == RESULT_OK) {
                 Uri uri = data.getData();
-                activity.uploadMultipart(activity.getFilePath(uri));
+                actions.uploadMultipart(actions.getFilePath(uri));
             }
 
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    /**
+     * Este método se usa para mostrar el gestor de archivos y permitir al usuario seleccionar un fichero.
+     */
     public void showFileChooser() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");

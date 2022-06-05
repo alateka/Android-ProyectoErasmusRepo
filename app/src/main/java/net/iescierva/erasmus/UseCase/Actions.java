@@ -264,7 +264,7 @@ public class Actions {
 
         String url = App.IP+"/api/download_document?id="+id;
 
-        // HTTP Headers
+        // Cabeceras HTTP
         HashMap<String,String> headers = new HashMap<>();
         headers.put("Authorization", "Bearer "+App.user.getApiToken());
 
@@ -274,6 +274,8 @@ public class Actions {
                 response -> {
                     try {
                         if (response != null) {
+                        // Si la respuesta contiene datos, se creará un objeto FileOutputStream el cual se guardará como fichero temporalmente
+                        // Los datos obtenidos de la respuesta se guardarán en ese fichero para formar el archivo descargado. (PDF, World, Imagen, etc)
                             FileOutputStream outputStream;
                             String tempPDF = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/" + name;
                             outputStream = new FileOutputStream(tempPDF);
@@ -288,6 +290,9 @@ public class Actions {
                             openIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             openIntent.setClipData(ClipData.newRawUri("", uriPath));
 
+
+                            // En función del tipo de archivo se identificará con un tipo de MIME distinto.
+                            // De esta manera el sistema de Android abrirá el fichero con la aplicaión que mas le convenga
                             if (name.contains(".pdf"))
                                 openIntent.setDataAndType(uriPath, "application/pdf");
                             if (name.contains(".jpeg") || name.contains(".jpg") || name.contains(".png"))
