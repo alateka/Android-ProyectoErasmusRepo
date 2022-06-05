@@ -28,7 +28,7 @@ import com.android.volley.toolbox.Volley;
 import net.gotev.uploadservice.protocols.multipart.MultipartUploadRequest;
 import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.R;
-import net.iescierva.erasmus.utils.InputStreamVolleyRequest;
+import net.iescierva.erasmus.Utils.InputStreamVolleyRequest;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
