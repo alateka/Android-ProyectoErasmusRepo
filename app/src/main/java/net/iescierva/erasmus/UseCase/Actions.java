@@ -260,7 +260,7 @@ public class Actions {
      * @param id ID del documento a mostrar.
      * @param name Nombre del documento a mostrar.
      */
-    public void downloadAndOpenPDF(String id, String name) {
+    public void downloadAndOpen(String id, String name) {
 
         String url = App.IP+"/api/download_document?id="+id;
 
@@ -281,18 +281,30 @@ public class Actions {
                             outputStream.close();
 
                             File file = new File(tempPDF);
-                            Uri uriPdfPath = FileProvider.getUriForFile(contextActivity, contextActivity.getApplicationContext().getPackageName() + ".provider", file);
+                            Uri uriPath = FileProvider.getUriForFile(contextActivity,
+                                    contextActivity.getApplicationContext().getPackageName() + ".provider", file);
 
-                            Intent pdfOpenIntent = new Intent(Intent.ACTION_VIEW);
-                            pdfOpenIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            pdfOpenIntent.setClipData(ClipData.newRawUri("", uriPdfPath));
-                            pdfOpenIntent.setDataAndType(uriPdfPath, "application/pdf");
-                            pdfOpenIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION |  Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+                            Intent openIntent = new Intent(Intent.ACTION_VIEW);
+                            openIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            openIntent.setClipData(ClipData.newRawUri("", uriPath));
+
+                            if (name.contains(".pdf"))
+                                openIntent.setDataAndType(uriPath, "application/pdf");
+                            if (name.contains(".jpeg") || name.contains(".jpg") || name.contains(".png"))
+                                openIntent.setDataAndType(uriPath, "image/jpeg");
+                            if (name.contains(".txt"))
+                                openIntent.setDataAndType(uriPath, "text/plain");
+                            if (name.contains(".docx") || name.contains(".odt"))
+                                openIntent.setDataAndType(uriPath, "application/vnd.oasis.opendocument.text");
+                            if (name.contains(".tar") || name.contains(".zip") || name.contains(".rar") || name.contains(".7z"))
+                                openIntent.setDataAndType(uriPath, "application/zip");
+
+                            openIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION |  Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
 
                             try {
-                                contextActivity.startActivity(pdfOpenIntent);
+                                contextActivity.startActivity(openIntent);
                             } catch (ActivityNotFoundException activityNotFoundException) {
-                                Toast.makeText(contextActivity,"There is no app to load corresponding PDF",Toast.LENGTH_LONG).show();
+                                Toast.makeText(contextActivity,"ERROR",Toast.LENGTH_LONG).show();
                             }
                         }
                     } catch (Exception e) {

@@ -63,7 +63,8 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
 
         if (document.getDocumentName().contains(".tar")
                 || document.getDocumentName().contains(".zip")
-                || document.getDocumentName().contains(".rar"))
+                || document.getDocumentName().contains(".rar")
+                || document.getDocumentName().contains(".7z"))
             holder.typeFile.setImageResource(R.drawable.compress_type);
 
 
@@ -74,7 +75,7 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
             popup.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
                     case R.id.show_document:
-                        activity.downloadAndOpenPDF(document.getId(), document.getDocumentName());
+                        activity.downloadAndOpen(document.getId(), document.getDocumentName());
                         return true;
                     case R.id.delete_document:
                         activity.deleteDocumentByID(document.getId());
