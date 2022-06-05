@@ -23,7 +23,9 @@
                 android:padding="11dp"
                 android:textStyle="bold"
                 android:textAllCaps="false"
-                android:textIsSelectable="false"/>
+                android:textIsSelectable="false"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -35,7 +37,8 @@
                 android:background="#FFFFFF"
                 android:padding="11dp"
                 android:textAllCaps="false"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/user_last_name"
                 android:layout_width="match_parent"
@@ -47,7 +50,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +63,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/hint_email"
                 android:layout_width="match_parent"
@@ -70,7 +76,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,7 +89,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/txt_user_cycle"
                 android:layout_width="match_parent"
@@ -93,7 +102,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -104,7 +115,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/txt_user_nationality"
                 android:layout_width="match_parent"
@@ -116,7 +128,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,7 +141,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/txt_user_phone"
                 android:layout_width="match_parent"
@@ -139,7 +154,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,7 +167,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/txt_user_zip_code"
                 android:layout_width="match_parent"
@@ -162,7 +180,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -173,7 +193,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/txt_user_dni"
                 android:layout_width="match_parent"
@@ -185,7 +206,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -196,7 +219,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/txt_user_address"
                 android:layout_width="match_parent"
@@ -208,7 +232,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -219,7 +245,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/txt_user_locality"
                 android:layout_width="match_parent"
@@ -231,7 +258,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -242,7 +271,8 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
         <TextView
                 android:text="@string/txt_birth_date"
                 android:layout_width="match_parent"
@@ -254,7 +284,9 @@
                 android:background="@drawable/box"
                 android:textAlignment="center"
                 android:padding="11dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowRadius="7"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -264,6 +296,7 @@
                 android:textAlignment="center"
                 android:background="#FFFFFF"
                 android:padding="11dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+        />
     </LinearLayout>
 </ScrollView>

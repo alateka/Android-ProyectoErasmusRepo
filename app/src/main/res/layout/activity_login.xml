@@ -43,6 +43,7 @@
                 android:autofillHints=""/>
         <Button
                 android:text="@string/btn_login"
+                android:background="@drawable/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnLogin"
@@ -51,7 +52,10 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_marginTop="55dp"
-                android:textColor="#FFFFFF"/>
+                android:padding="9dp"
+                android:textColor="#FFFFFF"
+                android:shadowColor="#2E2E2E"
+                android:shadowRadius="7"/>
         <ProgressBar
                 android:id="@+id/indeterminateBar"
                 android:layout_width="wrap_content"

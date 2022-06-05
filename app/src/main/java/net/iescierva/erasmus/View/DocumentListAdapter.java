@@ -43,8 +43,11 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
         final Document document = listData[position];
 
         holder.documentName.setText(document.getDocumentName());
+
+        // Icono por defecto para los archivos desconocidos
         holder.typeFile.setImageResource(android.R.drawable.checkbox_off_background);
 
+        // En función del tipo de archivo se le indicará un icono relacionado con el tipo de MIME
         if (document.getDocumentName().contains(".pdf"))
             holder.typeFile.setImageResource(R.drawable.pdf_type);
 
@@ -66,6 +69,7 @@ public class DocumentListAdapter extends RecyclerView.Adapter<DocumentListAdapte
                 || document.getDocumentName().contains(".rar")
                 || document.getDocumentName().contains(".7z"))
             holder.typeFile.setImageResource(R.drawable.compress_type);
+
 
 
         final RelativeLayout relativeLayout = holder.relativeLayout;

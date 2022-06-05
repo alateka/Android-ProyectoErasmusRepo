@@ -69,7 +69,7 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
         ArrayList<String> spinnerItems = new ArrayList<>();
         spinnerItems = activity.getCycles(spinnerItems);
         spinnerItems.add(App.user.getCycleName());
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerItems);
+        ArrayAdapter adapter = new ArrayAdapter(this, R.layout.spinner_item, spinnerItems);
         spinner.setAdapter(adapter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     }
