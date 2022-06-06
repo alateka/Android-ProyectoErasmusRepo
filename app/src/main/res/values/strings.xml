@@ -45,4 +45,5 @@
     <string name="channel_description">Erasmus notifications</string>
     <string name="txt_home">Menu principal</string>
     <string name="txt_edit_user_cancel">Cancelar</string>
+    <string name="txt_file_manager_warning">Es necesarion que seleccione y use un gestor de archivos</string>
 </resources>

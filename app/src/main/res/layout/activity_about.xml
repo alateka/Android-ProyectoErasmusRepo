@@ -10,15 +10,14 @@
 
     <TextView
             android:text="@string/txt_app_description"
-            android:layout_width="380dp"
-            android:layout_height="370dp"
+            android:layout_width="357dp"
+            android:layout_height="443dp"
             android:id="@+id/description_app"
             android:textSize="24sp"
             android:fontFamily="@font/ubuntu"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:textColor="#FFFFFF"
-            android:textAlignment="textStart" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.087" app:layout_constraintHorizontal_bias="0.384"/>
+            android:textAlignment="viewStart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="36dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

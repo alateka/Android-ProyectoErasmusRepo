@@ -111,7 +111,7 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(launchEditActivity);
             return true;
         }
-        if (id == R.id.about_app_action) {
+        if (id == R.id.back_action) {
             Intent launchAboutActivity = new Intent(this, AboutActivity.class);
             startActivity(launchAboutActivity);
             return true;

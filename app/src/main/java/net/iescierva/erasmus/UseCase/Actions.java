@@ -90,7 +90,7 @@ public class Actions {
 
         } catch (Exception exc) {
             System.out.println(exc.getMessage());
-            Toast.makeText(contextActivity, exc.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(contextActivity, R.string.txt_file_manager_warning, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -100,9 +100,6 @@ public class Actions {
     public void requestStoragePermission() {
         if (ContextCompat.checkSelfPermission(contextActivity, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
             return;
-
-        if (!ActivityCompat.shouldShowRequestPermissionRationale((Activity) contextActivity, Manifest.permission.READ_EXTERNAL_STORAGE))
-            Toast.makeText(contextActivity, "Si no aceptas los permisos, no podrías subir documentos", Toast.LENGTH_SHORT).show();
 
         ActivityCompat.requestPermissions((Activity) contextActivity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
