@@ -29,7 +29,7 @@ public class App extends Application {
     }
 
     /**
-     * Crea el sistema de notificaciones para la APP.
+     * Crea el sistema de notificaciones para esta APP.
      */
     private void createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

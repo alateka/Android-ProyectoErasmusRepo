@@ -1,8 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Erasmus" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">#28549F</item>
-        <item name="colorAccent">#274579</item>
+        <item name="colorAccent">#A5C6FF</item>
         <item name="colorButtonNormal">#22529C</item>
     </style>
 </resources>

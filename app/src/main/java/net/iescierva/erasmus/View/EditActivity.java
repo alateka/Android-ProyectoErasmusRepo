@@ -112,6 +112,9 @@ public class EditActivity extends AppCompatActivity implements AdapterView.OnIte
             startActivity(i);
             return true;
         }
+        if (id == R.id.user_cancel_action) {
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 

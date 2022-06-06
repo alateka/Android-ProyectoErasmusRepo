@@ -12,7 +12,7 @@
     <string name="user_name">Name</string>
     <string name="txt_user_dni">Identification (DNI/NIF)</string>
     <string name="user_last_name">Last Name</string>
-    <string name="loading_session">Getting data...</string>
+    <string name="loading_session">Getting data…</string>
     <string name="txt_switch_document">Ir a Documentos</string>
     <string name="txt_switch_account">Account</string>
     <string name="upload_completed">Upload Completed</string>
@@ -20,7 +20,7 @@
     <string name="uploading_file">Uploading document</string>
     <string name="txt_refresh">Documents updated</string>
     <string name="txt_update_document">Upload completed</string>
-    <string name="txt_edit_user">Edit my data</string>
+    <string name="txt_edit_user">Save</string>
     <string name="spinner_fp">Cycle</string>
     <string name="not_selected">Not selected</string>
     <string name="txt_user_cycle">PF</string>
@@ -33,9 +33,9 @@
     <string name="txt_show_document">Open</string>
     <string name="txt_delete_document">Remove</string>
     <string name="txt_about_app">About APP</string>
-    <string name="txt_app_description">With Erasmus APP maked with ❤️ by IES Ingeniero de la Cierva you can manage all your data and documents without enter from web</string>
+    <string name="txt_app_description">With Erasmus APP made with ❤️ by IES Ingeniero de la Cierva you can manage all your data and documents without enter from web</string>
     <string name="label_about">About APP</string>
-    <string name="message_open_pdf">Downloading...</string>
+    <string name="message_open_pdf">Downloading…</string>
     <string name="txt_user_data_edit">Edit profile</string>
     <string name="txt_document_deleted">Document deleted</string>
     <string name="erasmus_logo_description">Erasmus image</string>
@@ -44,4 +44,5 @@
     <string name="channel_name">erasmus_notifications</string>
     <string name="channel_description">Erasmus notifications</string>
     <string name="txt_home">Main menu</string>
+    <string name="txt_edit_user_cancel">Cancel</string>
 </resources>

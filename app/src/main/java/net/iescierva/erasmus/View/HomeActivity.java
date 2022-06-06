@@ -4,9 +4,9 @@
 
 package net.iescierva.erasmus.View;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -17,15 +17,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
+import net.iescierva.erasmus.R;
+import net.iescierva.erasmus.UseCase.Actions;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import net.iescierva.erasmus.R;
-import net.iescierva.erasmus.UseCase.Actions;
 
 /**
  * Actividad principal donde se instancia y adapta tanto la pestaña de
@@ -56,7 +54,9 @@ public class HomeActivity extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
 
         Objects.requireNonNull(tabLayout.getTabAt(0)).setText(R.string.txt_user_data);
+        Objects.requireNonNull(tabLayout.getTabAt(0)).setIcon(R.drawable.user_folder);
         Objects.requireNonNull(tabLayout.getTabAt(1)).setText(R.string.txt_documents_list);
+        Objects.requireNonNull(tabLayout.getTabAt(1)).setIcon(R.drawable.document_folder);
     }
 
     private static class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -90,8 +90,6 @@ public class HomeActivity extends AppCompatActivity {
     /**
      * Este método crea el menu de opciones en la barra de herramientas.
      * @param menu El menu sobre el que añadir las opciones.
-     *
-     * @return
      */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home_menu, menu);
@@ -101,8 +99,6 @@ public class HomeActivity extends AppCompatActivity {
     /**
      * Este método se encarga de ejecutar la función de la opción del menu que fue seleccionada.
      * @param item La opción del menu que fue seleccionada.
-     *
-     * @return
      */
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();

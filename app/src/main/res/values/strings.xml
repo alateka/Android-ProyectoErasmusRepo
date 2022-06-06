@@ -11,7 +11,7 @@
     <string name="user_name">Nombre</string>
     <string name="txt_user_dni">Identificación (DNI/NIF)</string>
     <string name="user_last_name">Apellidos</string>
-    <string name="loading_session">Obteniendo datos...</string>
+    <string name="loading_session">Obteniendo datos…</string>
     <string name="txt_switch_document">Ir a Documentos</string>
     <string name="txt_switch_account">Perfil</string>
     <string name="upload_completed">Subida Completada</string>
@@ -19,7 +19,7 @@
     <string name="uploading_file">Subiendo documento</string>
     <string name="txt_refresh">Documentos actualizados</string>
     <string name="txt_update_document">Subida completada</string>
-    <string name="txt_edit_user">Editar mis datos</string>
+    <string name="txt_edit_user">Guardar</string>
     <string name="spinner_fp">Ciclo</string>
     <string name="not_selected">No seleccionado</string>
     <string name="txt_user_cycle">FP</string>
@@ -35,7 +35,7 @@
     <string name="txt_app_description">Con la aplicación de Erasmus hecha con ❤️ por el IES Ingeniero de la Cierva puedes administrar todos tus documentos y datos personales sin entrar en la web.
     </string>
     <string name="label_about">Sobre la APP</string>
-    <string name="message_open_pdf">Descargando...</string>
+    <string name="message_open_pdf">Descargando…</string>
     <string name="txt_user_data_edit">Editar perfil</string>
     <string name="txt_document_deleted">Documento eliminado</string>
     <string name="erasmus_logo_description">Imagen de Erasmus</string>
@@ -44,4 +44,5 @@
     <string name="channel_name">erasmus_notifications</string>
     <string name="channel_description">Erasmus notifications</string>
     <string name="txt_home">Menu principal</string>
+    <string name="txt_edit_user_cancel">Cancelar</string>
 </resources>

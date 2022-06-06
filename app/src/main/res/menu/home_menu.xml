@@ -2,16 +2,16 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="@string/txt_edit_user"
-          android:icon="@android:drawable/ic_menu_edit"
+          android:icon="@drawable/edit_user"
           android:id="@+id/user_save_action"
           app:showAsAction="ifRoom"/>
     <item
             android:id="@+id/upload_file_action"
             android:title="@string/btn_upload_file"
             app:showAsAction="ifRoom"
-            android:icon="@android:drawable/ic_menu_upload"/>
+            android:icon="@drawable/upload_action"/>
     <item android:title="@string/txt_about_app"
-          android:icon="@android:drawable/ic_menu_help"
+          android:icon="@drawable/about_action"
           android:id="@+id/about_app_action"
           app:showAsAction="ifRoom"/>
 </menu>

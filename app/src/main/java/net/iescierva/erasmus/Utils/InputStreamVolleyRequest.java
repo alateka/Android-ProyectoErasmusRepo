@@ -8,6 +8,11 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * Esta clase extiende de la clase Request de la libreria volley para las peticiones HTTP
+ *  y ha sido adaptada para poder realizar la descarga de archivos desde la API.
+ */
 public class InputStreamVolleyRequest extends Request<byte[]> {
     private final Response.Listener<byte[]> mListener;
     private final Map<String, String> mHeaders;
