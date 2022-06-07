@@ -7,6 +7,7 @@ package net.iescierva.erasmus.View;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,6 +57,16 @@ public class LoginActivity extends AppCompatActivity {
         txtMessage.setVisibility(View.INVISIBLE);
 
         btnLogin.setOnClickListener(view -> login());
+
+        // Evento de teclado para que al pulsar Enter en el teclado del movil, se dispare la función login(),
+        // solo si esta enfocado en el campo de contraseña.
+        enterPassword.setOnKeyListener((v, keyCode, event) -> {
+            if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                login();
+                return true;
+            }
+            return false;
+        });
     }
 
     private void login() {

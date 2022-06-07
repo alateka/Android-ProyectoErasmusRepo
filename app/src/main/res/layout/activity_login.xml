@@ -24,6 +24,7 @@
                 android:hint="@string/hint_email"
                 android:inputType="textEmailAddress"
                 android:textSize="23sp"
+                android:text="pepe@mail.es"
                 android:fontFamily="@font/ubuntu"
                 android:gravity="center"
                 android:layout_gravity="center"/>
@@ -32,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
+                android:text="12345678"
                 android:id="@+id/enterPassword"
                 android:hint="@string/hint_password"
                 android:textSize="23sp"
