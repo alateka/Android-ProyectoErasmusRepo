@@ -10,7 +10,6 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 import net.iescierva.erasmus.Model.User;
-import net.iescierva.erasmus.UseCase.Actions;
 
 public class App extends Application {
     // Constante usada para indicar el host donde se esta alogando la web

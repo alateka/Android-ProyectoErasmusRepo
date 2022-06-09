@@ -13,13 +13,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
-import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
@@ -49,8 +46,6 @@ public class Actions {
     private JSONArray ciclos;
 
     public String uploadRequest;
-
-    private static final int STORAGE_PERMISSION_CODE = 123;
 
     /**
      * Clase dedicada a los casos de uso y acciones por parte del usuario.

@@ -11,10 +11,10 @@
                 android:layout_width="333dp"
                 android:layout_height="82dp"
                 android:id="@+id/imageView"
-                android:contentDescription="Erasmus Logo"
                 android:layout_gravity="center"
                 android:layout_marginBottom="55dp"
-                android:layout_marginTop="33dp"/>
+                android:layout_marginTop="33dp"
+                android:contentDescription="@string/erasmus_logo_description"/>
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -24,7 +24,6 @@
                 android:hint="@string/hint_email"
                 android:inputType="textEmailAddress"
                 android:textSize="23sp"
-                android:text="pepe@mail.es"
                 android:fontFamily="@font/ubuntu"
                 android:gravity="center"
                 android:layout_gravity="center"/>
@@ -33,7 +32,6 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:text="12345678"
                 android:id="@+id/enterPassword"
                 android:hint="@string/hint_password"
                 android:textSize="23sp"

@@ -22,9 +22,9 @@ import net.gotev.uploadservice.UploadServiceConfig;
 import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.Model.User;
 import net.iescierva.erasmus.R;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.HashMap;
 import java.util.Map;
 
