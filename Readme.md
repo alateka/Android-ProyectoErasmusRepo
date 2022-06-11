@@ -9,7 +9,7 @@ memoria interna del dispositivo o SD. Pero los documentos que el usuario desee a
 tipo de MIME se le indicará la aplicación mas recomendable a usar.
 
 ### Desarrollo de la API
-- La API es desarrollada bajo código PHP con la ayuda de una librería que ya estaban incorporada en el proyecto de Laravel actual. En concreto se ha usado la librería “Laravel Sanctum” la cual nos otorga una generación de tokens para cada usuario de manera automática, con posibilidad de identificar los datos del usuario con solo tener su token. El siguiente enlace contiene el código fuente del controlador de la API y su código de rutas: [Link](https://drive.google.com/file/d/11CnI695RRo2hHpchCpTnQ4tk5dXr_FBM/view?usp=sharing)
+- La API es desarrollada bajo código PHP con la ayuda de una librería que ya estaban incorporada en el proyecto de Laravel actual. En concreto se ha usado la librería “Laravel Sanctum” la cual nos otorga una generación de tokens para cada usuario de manera automática, con posibilidad de identificar los datos del usuario con solo tener su token.
 
 # Desarrollo de la APP
 A continuación se mostrará las clases mas importantes de este proyecto y sus funciones.
