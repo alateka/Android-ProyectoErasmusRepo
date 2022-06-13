@@ -7,7 +7,10 @@ package net.iescierva.erasmus.View;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.MediaController;
+import android.widget.VideoView;
 import androidx.appcompat.app.AppCompatActivity;
+import net.iescierva.erasmus.App;
 import net.iescierva.erasmus.R;
 
 public class AboutActivity extends AppCompatActivity {
@@ -16,6 +19,12 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+        VideoView videoErasmus = findViewById(R.id.video_erasmus);
+        videoErasmus.setVideoPath(App.IP+"/video/MasterFinal-erasmus.webm");
+        videoErasmus.setMediaController(new MediaController(AboutActivity.this));
+        videoErasmus.start();
+        videoErasmus.requestFocus();
     }
 
     /**
