@@ -4,9 +4,7 @@
 - El proyecto hace uso de varias librerías orientadas a las respuestas HTTP. Para subir archivos vía API se usa la librería: net.gotev:uploadservice:4.7.0. Para descargar archivos y enviar peticiones GET y POST a la API se usa: com.android.volley:volley:1.2.1
 
 ### Persistencia de datos
-- Cada dato personal del usuario es almacenado en memoria RAM durante la ejecución de la aplicación. La aplicación no almacenará ningún documento en la
-memoria interna del dispositivo o SD. Pero los documentos que el usuario desee abrir, se descargarán de manera temporal para su posterior visualización por parte del usuario. Al visualizar un archivo, el usuario podrá incluso indicar con que aplicación desea abrirlo. En función del
-tipo de MIME se le indicará la aplicación mas recomendable a usar.
+- Cada dato personal del usuario es almacenado en memoria RAM durante la ejecución de la aplicación. Los documentos que el usuario desee visualizar, se descargarán en su carpeta de descargas del almacenamiento para su posterior visualización por parte del mismo. Aunque el proceso de apertura de un documento se le abrirá automáticamente en caso de que tenga una aplicación de lectura para cada tipo de archivo.
 
 ### Desarrollo de la API
 - La API es desarrollada bajo código PHP con la ayuda de una librería que ya estaban incorporada en el proyecto de Laravel actual. En concreto se ha usado la librería “Laravel Sanctum” la cual nos otorga una generación de tokens para cada usuario de manera automática, con posibilidad de identificar los datos del usuario con solo tener su token.
