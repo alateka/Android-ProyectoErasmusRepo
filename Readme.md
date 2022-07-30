@@ -1,3 +1,7 @@
+## Imágenes de la APP:
+![Demo2](Demo2.jpeg)
+![Demo1](Demo1.jpeg)
+
 # Documentación del proyecto
 
 ### Composición del proyecto
@@ -23,7 +27,3 @@ A continuación se mostrará las clases mas importantes de este proyecto y sus f
 
 ### Clase Actions
 - Esta clase representa los casos de uso por parte del usuario. Es decir es la clase que contiene todos los métodos relacionados con las acciones que el usuario hará disparar durante su actividad en la aplicación, normalmente pulsar botones, recargar una vista, o pulsar en algún item de la aplicación.
-
-## Imágenes de la APP:
-![Demo2](Demo2.jpeg)
-![Demo1](Demo1.jpeg)
